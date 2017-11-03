@@ -4,7 +4,7 @@ spring:
          name: provider-dubbo
       registry:
          protocol: zookeeper
-         address: 172.20.1.16:2181
+         address: 172.18.1.112:2181
       protocol:
          name: dubbo
          port: -1
