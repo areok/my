@@ -24,19 +24,19 @@
         <processorPath useClasspath="true" />
         <module name="inter" />
       </profile>
-      <profile default="false" name="Annotation profile for provider" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="provider" />
-      </profile>
       <profile default="false" name="Annotation profile for consumer" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="consumer" />
+      </profile>
+      <profile default="false" name="Annotation profile for provider" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="provider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
