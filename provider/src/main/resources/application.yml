@@ -1,0 +1,12 @@
+spring:
+  dubbo:
+    application:
+       name: provider
+    registry:
+       protocol: zookeeper
+       address: 172.20.1.16:2181
+    protocol:
+       name: dubbo
+       port: -1
+    timeout: 5000
+    scan: com.demo.impl
