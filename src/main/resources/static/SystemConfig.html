@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <input th:value="${#httpServletRequest.getServletContext()}"></input>
+  <input th:value="${#ctx.getVariables('fruit')}"></input>
+  <input th:value="${#vars.getVariables('fruit')}"></input>
+  <select th:name ="s">
+      <option th:each="fruit : ${application.fruit.getChild(application.fruit.APPLE)}"
+              th:value="${fruit.name}"
+              th:text="${fruit.place}">
+      </option>
+  </select>
+</body>
+</html>
