@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"/>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<tr th:each="prod,i : ${list}">
+    <td th:text="${prod}"/><br/>
+    <td th:text="${i}"/><br/>
+</tr>
+<hr/>
+<tr th:each="prod,i : ${map}">
+    <td th:text="${prod.key}"/>
+    <th:block>====</th:block>
+    <td th:text="${prod.value}"/><br/>
+    <td th:text="${i}"/><br/>
+</tr>
+<hr/>
+    <input type="checkbox" th:value="123"/>1231
+<hr/>
+<tr th:each="prod,i : ${map}">
+    <input type="checkbox" th:value="${prod.key}"/>
+    <span th:text="${prod.value}"></span> <br/>
+</tr>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<p th:text="'Hello！, ' + ${name} + '!'">3333</p>
+<p th:text="|Hello！, ${name}!|">3333</p>
+<p>3333</p>
+<p th:text = "${name}"></p>
+<th:block>asd</th:block>
+<!--if 条件判断-->
+<!--/*@thymesVar id="total" type="java"*/-->
+<div th:if="${total} == 0">... do something ...</div>
+<!--/*@thymesVar id="count" type="java"*/-->
+<p th:if="${count} gt 0">this is test...</p>
+<!--/*@thymesVar id="execMode" type="java"*/-->
+<p th:text="'Execution mode is ' + ( (${execMode} == 'dev')? 'Development' : 'Production')"></p>
+<hr/>
+<!--/*@thymesVar id="users" type="java"*/-->
+<li th:each="user,iterStat: ${users}">
+        <input th:if="${user.status}!='4'" th:checked="${user.status}=='4'" type="radio" name="selectUser" th:id="${user.id}"  />
+
+        <input th:if="${user.status}!='4'" checked="checked" type="radio" name="selectUser" th:id="${user.id}"  />
+        <span  th:text="'审批人'+${user.name}" ></span>
+</li>
+<hr/>
+<table th:each="user,iterStat: ${users}">
+    <p th:if="${user.status}!='4'" th:text="${iterStat.index}" />
+</table>
+<hr/>
+<li th:each="user: ${users}">
+    <p th:if="${user.status}!='4'" th:text="${user.name}" />
+</li>
+</body>
+</html>
