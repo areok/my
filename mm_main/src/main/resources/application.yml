@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3306/manpower_manager
+    username: root
+    password: 123456
+server:
+  port: 8090
+  context-path: /
+mybatis:
+  mapper-package: com.hd.mm.mapper
+  config-location: classpath:mybatis.xml
+  check-config-location: true
+  mapper-locations: classpath:static/*Mapper.xml
