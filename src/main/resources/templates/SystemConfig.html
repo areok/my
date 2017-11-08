@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+  <p>将变量放入servlet中，可以从页面中取出来</p>
+  <!--<input th:value="${#httpServletRequest.getServletContext().getAttribute('fruit').getChildren(application.fruit.APPLE)}"></input>-->
+  <input th:text="${#ctx}"/>
+  <!--<input th:value="${application.fruit.APPLE}"></input>-->
+  <hr/>
+  <!--<select th:name ="s">
+      <option th:each="fruit : ${application.fruit.getChildren(application.fruit.APPLE)}"
+              th:value="${fruit.name}"
+              th:text="${fruit.place}">
+      </option>
+  </select>-->
+  <hr/>
+  <select th:name ="ss">
+      <option th:each="fruit : ${#httpServletRequest.getServletContext().getAttribute('fruit').getChildren(application.fruit.APPLE)}"
+              th:value="${fruit.name}"
+              th:text="${fruit.place}">
+      </option>
+  </select>
+</body>
+</html>

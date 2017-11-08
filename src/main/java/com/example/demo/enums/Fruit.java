@@ -44,7 +44,7 @@ public enum Fruit {
                 ", name='" + name + '\'' +
                 '}';
     }
-    public Fruit[] getChildren(Fruit fruit){
+    public static Fruit[] getChildren(Fruit fruit){
 
         return Fruit.values();
     }
