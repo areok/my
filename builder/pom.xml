@@ -29,8 +29,8 @@
                     </dependency>
                     <dependency>
                         <groupId>hd</groupId>
-                        <artifactId>hd.mm</artifactId>
-                        <version>1.0-SNAPSHOT</version>
+                        <artifactId>base</artifactId>
+                        <version>1.0.0</version>
                     </dependency>
                 </dependencies>
             </plugin>
