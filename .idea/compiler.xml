@@ -35,6 +35,7 @@
       <module name="hd.mm.builder" target="1.5" />
       <module name="mm" target="1.8" />
       <module name="mm_main" target="1.8" />
+      <module name="mybatis" target="1.8" />
       <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>

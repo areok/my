@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ImportResource;
  * Created by 马宇驰 on 2017/8/22.
  */
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
-@ImportResource(locations={"classpath:xml/*.xml"})
+//@ImportResource(locations={"classpath:com/hd/mm/mapper/*.xml"})
 @MapperScan(basePackages = "com.hd.mm.mapper")
 public class SpringBootSampleApplication {
     public static void main(String[] args) {
