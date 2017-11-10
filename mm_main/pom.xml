@@ -3,11 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>root</artifactId>
+        <artifactId>mm</artifactId>
         <groupId>hd</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <groupId>hd</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>mm_main</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
     <dependencies>
         <dependency>
             <groupId>tk.mybatis</groupId>
@@ -20,9 +25,10 @@
             <version>1.4.6.RELEASE</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>hd</groupId>
+            <artifactId>base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>hd.mm</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
 </project>

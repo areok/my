@@ -29,10 +29,13 @@
         </plugin>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
 
-        <plugin type="${mapper.plugin}">
+        <!--<plugin type="com.demo.base.TkMapperPlugin">
             <property name="mappers" value="${mapper.Mapper}"/>
-            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            &lt;!&ndash; caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true &ndash;&gt;
             <property name="caseSensitive" value="true"/>
+        </plugin>-->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="${mapper.Mapper}"/>
         </plugin>
         <!-- 注释处理器 type 使用用户指定提供的注释生成器类型。 这个类必须继承org.mybatis.generator.api.CommentGenerator接口。 而且必须有一个默认的构造函数  默认 DEFAULT（DefaultCommentGenerator）-->
         <commentGenerator type="com.demo.base.MybatisJpaCommentGenerator">
