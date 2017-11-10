@@ -1,0 +1,11 @@
+spring:
+  redis:
+    host: 172.20.1.16
+    port: 6379
+    database: 12
+    password: c07e5d2af989ddf7e8eaefc0bca4924d
+logging:
+  level: info
+  path: log/redis.log
+server:
+  port: 8081
