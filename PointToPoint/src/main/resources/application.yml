@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.18.1.112:3306/mytest
+    username: root
+    password: 123456
+  # default-store in spring session. it will be set in redis only outside.
+  #session:
+    #store-type: none
+  redis:
+    host: 172.20.1.16
+    port: 6379
+    database: 12
+    password: c07e5d2af989ddf7e8eaefc0bca4924d
+server:
+  port: 8082
+  context-path: /

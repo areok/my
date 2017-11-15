@@ -22,10 +22,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="websocketDemo" />
+        <module name="builder" />
+        <module name="OneToAll" />
+        <module name="PointToPoint" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="builder" target="1.8" />
+      <module name="OneToAll" target="1.8" />
+      <module name="PointToPoint" target="1.8" />
       <module name="websocketDemo" target="1.8" />
     </bytecodeTargetLevel>
   </component>

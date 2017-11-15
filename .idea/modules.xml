@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/OneToAll/OneToAll.iml" filepath="$PROJECT_DIR$/OneToAll/OneToAll.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PointToPoint/PointToPoint.iml" filepath="$PROJECT_DIR$/PointToPoint/PointToPoint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/builder/builder.iml" filepath="$PROJECT_DIR$/builder/builder.iml" />
       <module fileurl="file://$PROJECT_DIR$/websocketDemo.iml" filepath="$PROJECT_DIR$/websocketDemo.iml" />
     </modules>
   </component>

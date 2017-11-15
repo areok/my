@@ -6,7 +6,13 @@
 
     <groupId>com.demo</groupId>
     <artifactId>websocket</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>OneToAll</module>
+        <module>PointToPoint</module>
+        <module>builder</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

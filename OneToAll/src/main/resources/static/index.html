@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
-<html>
-<head>
+<head xmlns:th="http://www.thymeleaf.org"
+      xmlns:th="http://www.w3.org/1999/xhtml">
     <meta charset="UTF-8" />
     <title>My WebSocket</title>
 </head>
@@ -64,4 +64,5 @@ Welcome<br/>
         websocket.send(message);
     }
 </script>
+<script th:src="@{/static/js/jquery-3.2.1.min.js}"></script>
 </html>
