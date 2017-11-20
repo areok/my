@@ -11,4 +11,5 @@ public interface UserFacade {
     Map<String,String> login(User user);
 
     Map<String,String> register(User user);
+
 }
