@@ -19,20 +19,20 @@ public class UserFacadeImpl implements UserFacade {
     private UserMapper userMapper;
 
     @Override
-    public Map<String, String> login(User user) {
+    public User login(User user) {
         HashMap<String, String> map = new HashMap<>();
         user = userMapper.selectOne(user);
-        if(user!=null){
-            map.put("result","ok");
-        }else {
-            map.put("result","no");
-        }
-        return map;
+        return user;
     }
 
     @Override
     public Map<String, String> register(User user) {
         userMapper.insert(user);
         return null;
+    }
+
+    @Override
+    public User queryUser(Integer userId) {
+        return userMapper.selectByPrimaryKey(userId);
     }
 }

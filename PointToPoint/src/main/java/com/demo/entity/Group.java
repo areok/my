@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name = "my_group")
 public class Group implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
@@ -23,7 +24,6 @@ public class Group implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private List<User> userList;
 
     /**
      * @return id
@@ -116,11 +116,4 @@ public class Group implements Serializable {
         return sb.toString();
     }
 
-    public List<User> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
-    }
 }

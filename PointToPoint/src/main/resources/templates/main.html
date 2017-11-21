@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>My WebSocket</title>
+    <link type="text/css" rel="stylesheet" href="/css/main.css"/>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</head>
+
+<body id="body">
+<p th:text="'Welcome！, ' + ${#httpSession.getAttribute('user').name} + '!'"></p>
+<div class="contactsdiv" id="contactsdiv"></div>
+<div class="contentdiv" id="contentdiv">
+    <input type="text" id="targetUserId" hidden="hidden"/>
+    <input type="text" id="targetUserName" hidden="hidden"/>
+</div>
+<textarea id = "inputarea" class="inputarea" rows="30" cols="300"></textarea>
+<button id="sendbutton" class="sendbutton" type="button" onclick="send()">发送</button>
+</body>
+</html>

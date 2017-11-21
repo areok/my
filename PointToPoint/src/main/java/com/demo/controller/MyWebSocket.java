@@ -1,9 +1,14 @@
 package com.demo.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import com.demo.entity.User;
+import com.demo.service.inter.UserFacade;
 import com.demo.utils.MapUtils;
 import com.demo.utils.SpringContextUtil;
+import com.demo.vo.MessageVO;
 import org.apache.tomcat.websocket.WsSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.session.SessionRepository;
 import org.springframework.stereotype.Component;
 
@@ -27,10 +32,11 @@ public class MyWebSocket {
     private static int onlineCount = 0;
 
     //concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。
-    private static ConcurrentHashMap<String, MyWebSocket> webSocketMap = new ConcurrentHashMap<String, MyWebSocket>();
+    private static ConcurrentHashMap<Integer, MyWebSocket> webSocketMap = new ConcurrentHashMap<>();
 
     //与某个客户端的连接会话，需要通过它来给客户端发送数据
     private Session session;
+
 
     /**
      * 连接建立成功调用的方法
@@ -39,7 +45,7 @@ public class MyWebSocket {
     public void onOpen(Session session) {
         User currentUser = getCurrentUser(session);
         this.session = session;
-        webSocketMap.put(currentUser.getName(), this); //加入set中
+        webSocketMap.put(currentUser.getId(), this); //加入set中
         addOnlineCount();           //在线数加1
         System.out.println("有新连接加入！" + currentUser.getName() + "当前在线人数为" + getOnlineCount());
         try {
@@ -68,10 +74,18 @@ public class MyWebSocket {
     @OnMessage
     public void onMessage(String message, Session session) {
         System.out.println("来自客户端的消息:" + message);
-        String toWho = message.split(",")[1];
-        message = message.split(",")[0];
+        User user = getCurrentUser(session);
 
-        for (Map.Entry<String, MyWebSocket> temp : webSocketMap.entrySet()) {
+        MessageVO messageVO = JSON.parseObject(message, new TypeReference<MessageVO>() {});
+        Integer toWho = messageVO.getToUserId();
+      ;
+        MessageVO targetMessage = new MessageVO();
+        targetMessage.setMsg(messageVO.getMsg());
+        targetMessage.setFromUserName(user.getName());
+        targetMessage.setFromUserId(user.getId());
+        message = JSON.toJSONString(targetMessage);
+
+        for (Map.Entry<Integer, MyWebSocket> temp : webSocketMap.entrySet()) {
             if (temp.getKey().equals(toWho)) {
                 try {
                     temp.getValue().sendMessage(message);

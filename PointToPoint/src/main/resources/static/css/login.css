@@ -1,0 +1,19 @@
+.loginTiTle{
+    margin: auto;
+    margin-top: 100px;
+    margin-left: 38%;
+    font-family: 宋体;
+    color: mediumturquoise;
+    font-size: 99px;
+}
+.login{
+    margin: auto;
+    margin-top: 160px;
+    margin-left: 41%;
+}
+.loginfrom{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

@@ -3,30 +3,27 @@
  */
 $(function(){
     var form = $("#login");
-    var login_user = $("#login_user");
-    var login_regist = $("#login_register");
-    var login = function(){
+    var login_register = $("#login_register");
+
+    var regist = function(){
         var validator = form.serializeObject();
         console.log(form.serialize());
         console.log(JSON.stringify(validator))
         $.ajax({
-            url         : '/chat/login',
+            url         : '/chat/register',
             contentType : 'application/json',
             type        : 'post',
             data        :  JSON.stringify(validator),
             success : function (result) {
                 if(result=="ok"){
-                    alert('登录成功!')
+                    alert('保存成功!')
                     location.href="/route/toMain";
                 }
                 else{
-                    alert("账户不存在！");
+                    alert(result.resultMsg);
                 }
             }
         })
     }
-    login_user.on("click",login);
-    login_regist.on("click",function(){
-        location.href = "/regist.html";
-    })
+    login_register.on("click",regist);
 })

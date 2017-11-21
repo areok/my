@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "my_group_user")
 public class GroupAndUser implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "group_id")

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("route")
 public class RouteController {
 
-    @GetMapping("toIndex")
-    public String toIndex(){
-        return "index";
+    @GetMapping("toMain")
+    public String toMain(){
+        return "main";
     }
 }

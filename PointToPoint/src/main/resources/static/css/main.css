@@ -1,0 +1,37 @@
+.contactsdiv{
+    overflow:scroll;
+    float: left;
+    margin-right: 5px;
+    width: 230px;
+    height:700px;
+    border:1px solid #F00
+}
+.li{
+    list-style-type: none;
+}
+.a{
+    text-decoration:none
+}
+.contentdiv{
+    overflow:scroll;
+    float: left;
+    height:500px;
+    float: left;
+    border: 2px solid #F00;
+    width: 600px;
+}
+.inputarea{
+    position: absolute;
+    overflow:scroll;
+    margin-left:231px;
+    margin-top:501px;
+    height:200px;
+    width: 600px;
+}
+.sendbutton{
+    position: absolute;
+    margin-left:720px;
+    margin-top:630px;
+    height:30px;
+    width: 70px;
+}

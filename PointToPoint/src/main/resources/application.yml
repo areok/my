@@ -12,6 +12,9 @@ spring:
     port: 6379
     database: 12
     password: c07e5d2af989ddf7e8eaefc0bca4924d
+  thymeleaf:
+    cache: false
 server:
   port: 8082
   context-path: /
+

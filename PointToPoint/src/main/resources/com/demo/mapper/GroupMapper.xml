@@ -9,6 +9,14 @@
     <result column="group_name" jdbcType="VARCHAR" property="groupName" />
     <result column="group_num" jdbcType="BIGINT" property="groupNum" />
   </resultMap>
+  <resultMap id="groupListMap" type="com.demo.vo.GroupVO">
+    <id property="id" column="group_id"></id>
+    <result property="groupName" column="group_name"></result>
+    <collection property="userList" ofType="com.demo.entity.User" javaType="ArrayList" >
+      <id property="id" column="user_id"></id>
+      <result property="name" column="name"></result>
+    </collection>
+  </resultMap>
   <sql id="Example_Where_Clause">
     <!--
       WARNING - @mbg.generated
@@ -146,19 +154,12 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <resultMap id="groupList" type="com.demo.entity.Group">
-    <id property="id" column="group_id"></id>
-    <result property="groupName" column="group_name"></result>
-    <collection property="userList" ofType="com.demo.entity.User" javaType="ArrayList" >
-      <id property="id" column="user_id"></id>
-      <result property="userName" column="user_name"></result>
-    </collection>
-  </resultMap>
-  <select id="getGroupList" resultType="groupList">
-    SELECT a.group_id,
-            a.user_id,
-            b.group_name,
-            cc.user_name
+
+  <select id="queryGroupList" resultMap="groupListMap">
+    SELECT a.group_id as group_id,
+            a.user_id as user_id,
+            b.group_name as group_name,
+            cc.name as name
             FROM my_group_user a
               INNER JOIN my_group b
               ON a.group_id = b.id

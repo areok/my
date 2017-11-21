@@ -8,8 +8,10 @@ import java.util.Map;
  * Created by 马宇驰 on 2017/11/14.
  */
 public interface UserFacade {
-    Map<String,String> login(User user);
+    User login(User user);
 
     Map<String,String> register(User user);
+
+    User queryUser(Integer userId);
 
 }
