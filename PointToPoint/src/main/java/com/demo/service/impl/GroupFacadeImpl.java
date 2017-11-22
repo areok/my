@@ -1,6 +1,5 @@
 package com.demo.service.impl;
 
-import com.demo.entity.Group;
 import com.demo.entity.GroupAndUser;
 import com.demo.mapper.GroupAndUserMapper;
 import com.demo.mapper.GroupMapper;

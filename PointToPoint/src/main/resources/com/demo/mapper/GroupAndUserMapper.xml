@@ -8,6 +8,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="group_id" jdbcType="VARCHAR" property="groupId" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="body_id" jdbcType="VARCHAR" property="bodyId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -77,7 +78,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    id, group_id, user_id
+    id, group_id, user_id, body_id
   </sql>
   <select id="selectByExample" parameterType="com.demo.entity.GroupAndUserExample" resultMap="BaseResultMap">
     <!--
@@ -129,6 +130,9 @@
       <if test="record.userId != null">
         user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
+      <if test="record.bodyId != null">
+        body_id = #{record.bodyId,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -141,7 +145,8 @@
     update my_group_user
     set id = #{record.id,jdbcType=BIGINT},
       group_id = #{record.groupId,jdbcType=VARCHAR},
-      user_id = #{record.userId,jdbcType=VARCHAR}
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      body_id = #{record.bodyId,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

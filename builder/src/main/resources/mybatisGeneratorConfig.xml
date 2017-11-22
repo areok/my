@@ -130,17 +130,17 @@
             &lt;!&ndash;属性驼峰处理&ndash;&gt;
             <property name="useActualColumnNames" value="false"/>
         </table>-->
-        <table schema="mybatis_fullflow" tableName="my_user" domainObjectName="User">
-            <!--属性驼峰处理-->
+        <!--<table schema="mybatis_fullflow" tableName="my_user" domainObjectName="User">
+            &lt;!&ndash;属性驼峰处理&ndash;&gt;
             <property name="useActualColumnNames" value="false"/>
-        </table>
+        </table>-->
         <table schema="mybatis_fullflow" tableName="my_group_user" domainObjectName="GroupAndUser">
             <!--属性驼峰处理-->
             <property name="useActualColumnNames" value="false"/>
         </table>
-        <table schema="mybatis_fullflow" tableName="my_group" domainObjectName="Group">
-            <!--属性驼峰处理-->
+<!--        <table schema="mybatis_fullflow" tableName="my_group" domainObjectName="Group">
+            &lt;!&ndash;属性驼峰处理&ndash;&gt;
             <property name="useActualColumnNames" value="false"/>
-        </table>
+        </table>-->
     </context>
 </generatorConfiguration>

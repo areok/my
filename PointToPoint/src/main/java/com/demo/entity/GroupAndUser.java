@@ -15,6 +15,12 @@ public class GroupAndUser implements Serializable {
     @Column(name = "user_id")
     private String userId;
 
+    /**
+     * 联系人id
+     */
+    @Column(name = "body_id")
+    private String bodyId;
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -59,6 +65,24 @@ public class GroupAndUser implements Serializable {
         this.userId = userId == null ? null : userId.trim();
     }
 
+    /**
+     * 获取联系人id
+     *
+     * @return body_id - 联系人id
+     */
+    public String getBodyId() {
+        return bodyId;
+    }
+
+    /**
+     * 设置联系人id
+     *
+     * @param bodyId 联系人id
+     */
+    public void setBodyId(String bodyId) {
+        this.bodyId = bodyId == null ? null : bodyId.trim();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -73,7 +97,8 @@ public class GroupAndUser implements Serializable {
         GroupAndUser other = (GroupAndUser) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getGroupId() == null ? other.getGroupId() == null : this.getGroupId().equals(other.getGroupId()))
-            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()));
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getBodyId() == null ? other.getBodyId() == null : this.getBodyId().equals(other.getBodyId()));
     }
 
     @Override
@@ -83,6 +108,7 @@ public class GroupAndUser implements Serializable {
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getBodyId() == null) ? 0 : getBodyId().hashCode());
         return result;
     }
 
@@ -95,6 +121,7 @@ public class GroupAndUser implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", groupId=").append(groupId);
         sb.append(", userId=").append(userId);
+        sb.append(", bodyId=").append(bodyId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

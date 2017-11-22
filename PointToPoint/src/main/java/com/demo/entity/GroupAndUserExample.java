@@ -304,6 +304,76 @@ public class GroupAndUserExample {
             return (Criteria) this;
         }
 
+        public Criteria andBodyIdIsNull() {
+            addCriterion("body_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdIsNotNull() {
+            addCriterion("body_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdEqualTo(String value) {
+            addCriterion("body_id =", value, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdNotEqualTo(String value) {
+            addCriterion("body_id <>", value, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdGreaterThan(String value) {
+            addCriterion("body_id >", value, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdGreaterThanOrEqualTo(String value) {
+            addCriterion("body_id >=", value, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdLessThan(String value) {
+            addCriterion("body_id <", value, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdLessThanOrEqualTo(String value) {
+            addCriterion("body_id <=", value, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdLike(String value) {
+            addCriterion("body_id like", value, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdNotLike(String value) {
+            addCriterion("body_id not like", value, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdIn(List<String> values) {
+            addCriterion("body_id in", values, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdNotIn(List<String> values) {
+            addCriterion("body_id not in", values, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdBetween(String value1, String value2) {
+            addCriterion("body_id between", value1, value2, "bodyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdNotBetween(String value1, String value2) {
+            addCriterion("body_id not between", value1, value2, "bodyId");
+            return (Criteria) this;
+        }
+
         public Criteria andGroupIdLikeInsensitive(String value) {
             addCriterion("upper(group_id) like", value.toUpperCase(), "groupId");
             return (Criteria) this;
@@ -311,6 +381,11 @@ public class GroupAndUserExample {
 
         public Criteria andUserIdLikeInsensitive(String value) {
             addCriterion("upper(user_id) like", value.toUpperCase(), "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBodyIdLikeInsensitive(String value) {
+            addCriterion("upper(body_id) like", value.toUpperCase(), "bodyId");
             return (Criteria) this;
         }
     }

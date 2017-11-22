@@ -157,14 +157,14 @@
 
   <select id="queryGroupList" resultMap="groupListMap">
     SELECT a.group_id as group_id,
-            a.user_id as user_id,
+            cc.id as user_id,
             b.group_name as group_name,
             cc.name as name
             FROM my_group_user a
               INNER JOIN my_group b
               ON a.group_id = b.id
-              INNER JOIN my_user cc
-              ON a.user_id = cc.id
+              LEFT JOIN my_user cc
+              ON a.body_id = cc.id
     WHERE a.user_id = #{userId}
   </select>
 </mapper>
