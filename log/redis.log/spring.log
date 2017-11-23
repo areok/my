@@ -855,3 +855,856 @@ java.lang.ClassCastException: java.lang.String cannot be cast to com.demo.entity
 2017-11-13 11:38:41.268  WARN 8692 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
 2017-11-13 11:38:41.396  INFO 8692 --- [main] com.demo.test.TestRedis                  : Started TestRedis in 5.543 seconds (JVM running for 6.889)
 2017-11-13 11:38:41.789  INFO 8692 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@c88a337: startup date [Mon Nov 13 11:38:37 CST 2017]; root of context hierarchy
+2017-11-23 11:20:58.387  INFO 2076 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 2076 (started by 马宇驰 in G:\redis)
+2017-11-23 11:20:58.407  INFO 2076 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 11:20:58.558  INFO 2076 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:20:58 CST 2017]; root of context hierarchy
+2017-11-23 11:21:01.271  INFO 2076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 11:21:02.557  WARN 2076 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+2017-11-23 11:21:02.586  INFO 2076 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-11-23 11:21:02.636 ERROR 2076 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111) [spring-boot-test-1.4.6.RELEASE.jar:1.4.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 46 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.util.Assert.isTrue(Assert.java:92) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter$MethodInvoker.<init>(MessageListenerAdapter.java:125) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter.afterPropertiesSet(MessageListenerAdapter.java:280) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 57 common frames omitted
+
+2017-11-23 11:21:02.646 ERROR 2076 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@22eeefeb] to prepare test instance [com.demo.test.TestRedisMQ@14a54ef6]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111) ~[spring-boot-test-1.4.6.RELEASE.jar:1.4.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 46 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.util.Assert.isTrue(Assert.java:92) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter$MethodInvoker.<init>(MessageListenerAdapter.java:125) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter.afterPropertiesSet(MessageListenerAdapter.java:280) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 57 common frames omitted
+
+2017-11-23 11:34:12.296  INFO 5000 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 5000 (started by 马宇驰 in G:\redis)
+2017-11-23 11:34:12.300  INFO 5000 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 11:34:12.385  INFO 5000 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:34:12 CST 2017]; root of context hierarchy
+2017-11-23 11:34:13.849  INFO 5000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 11:34:14.836  WARN 5000 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+2017-11-23 11:34:14.851  INFO 5000 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-11-23 11:34:14.872 ERROR 5000 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111) [spring-boot-test-1.4.6.RELEASE.jar:1.4.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 46 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.util.Assert.isTrue(Assert.java:92) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter$MethodInvoker.<init>(MessageListenerAdapter.java:125) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter.afterPropertiesSet(MessageListenerAdapter.java:280) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 57 common frames omitted
+
+2017-11-23 11:34:14.889 ERROR 5000 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@22eeefeb] to prepare test instance [com.demo.test.TestRedisMQ@6034e75d]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111) ~[spring-boot-test-1.4.6.RELEASE.jar:1.4.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 46 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#receiveMessage] - is the method public and has the proper arguments?
+	at org.springframework.util.Assert.isTrue(Assert.java:92) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter$MethodInvoker.<init>(MessageListenerAdapter.java:125) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter.afterPropertiesSet(MessageListenerAdapter.java:280) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 57 common frames omitted
+
+2017-11-23 11:35:35.246  INFO 3468 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 3468 (started by 马宇驰 in G:\redis)
+2017-11-23 11:35:35.248  INFO 3468 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 11:35:35.392  INFO 3468 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:35:35 CST 2017]; root of context hierarchy
+2017-11-23 11:35:37.153  INFO 3468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 11:35:39.140  INFO 3468 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:35:35 CST 2017]; root of context hierarchy
+2017-11-23 11:35:39.304  INFO 3468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 11:35:39.307  INFO 3468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 11:35:39.307  INFO 3468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 11:35:39.310  INFO 3468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 11:35:39.311  INFO 3468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 11:35:39.315  INFO 3468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 11:35:39.318  INFO 3468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 11:35:39.374  INFO 3468 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:35:39.374  INFO 3468 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:35:39.446  INFO 3468 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:35:39.763  WARN 3468 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 11:35:39.919  INFO 3468 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 11:35:40.169  INFO 3468 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.656 seconds (JVM running for 6.985)
+2017-11-23 11:35:40.553  INFO 3468 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:35:35 CST 2017]; root of context hierarchy
+2017-11-23 11:35:40.621  INFO 3468 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-23 11:36:42.341  INFO 9128 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 9128 (started by 马宇驰 in G:\redis)
+2017-11-23 11:36:42.343  INFO 9128 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 11:36:42.596  INFO 9128 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:36:42 CST 2017]; root of context hierarchy
+2017-11-23 11:36:44.317  INFO 9128 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 11:36:46.153  INFO 9128 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:36:42 CST 2017]; root of context hierarchy
+2017-11-23 11:36:46.276  INFO 9128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 11:36:46.279  INFO 9128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 11:36:46.279  INFO 9128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 11:36:46.280  INFO 9128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 11:36:46.281  INFO 9128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 11:36:46.285  INFO 9128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 11:36:46.286  INFO 9128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 11:36:46.333  INFO 9128 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:36:46.333  INFO 9128 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:36:46.409  INFO 9128 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:36:46.822  WARN 9128 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 11:36:46.984  INFO 9128 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 11:36:47.154  INFO 9128 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.643 seconds (JVM running for 6.938)
+2017-11-23 11:36:47.376  INFO 9128 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:36:42 CST 2017]; root of context hierarchy
+2017-11-23 11:36:47.379  INFO 9128 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-23 11:40:39.366  INFO 1668 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 1668 (started by 马宇驰 in G:\redis)
+2017-11-23 11:40:39.370  INFO 1668 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 11:40:39.510  INFO 1668 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:40:39 CST 2017]; root of context hierarchy
+2017-11-23 11:40:41.102  INFO 1668 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 11:40:41.950  WARN 1668 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#test] - is the method public and has the proper arguments?
+2017-11-23 11:40:41.963  INFO 1668 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-11-23 11:40:41.978 ERROR 1668 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#test] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111) [spring-boot-test-1.4.6.RELEASE.jar:1.4.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#test] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 46 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#test] - is the method public and has the proper arguments?
+	at org.springframework.util.Assert.isTrue(Assert.java:92) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter$MethodInvoker.<init>(MessageListenerAdapter.java:125) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter.afterPropertiesSet(MessageListenerAdapter.java:280) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 57 common frames omitted
+
+2017-11-23 11:40:41.986 ERROR 1668 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@22eeefeb] to prepare test instance [com.demo.test.TestRedisMQ@7da10b5b]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'container' defined in class path resource [com/demo/config/RedisConfig.class]: Unsatisfied dependency expressed through method 'container' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#test] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111) ~[spring-boot-test-1.4.6.RELEASE.jar:1.4.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'listenerAdapter' defined in class path resource [com/demo/config/RedisConfig.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#test] - is the method public and has the proper arguments?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 46 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot find a suitable method named [com.demo.config.Receiver#test] - is the method public and has the proper arguments?
+	at org.springframework.util.Assert.isTrue(Assert.java:92) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter$MethodInvoker.<init>(MessageListenerAdapter.java:125) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.listener.adapter.MessageListenerAdapter.afterPropertiesSet(MessageListenerAdapter.java:280) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 57 common frames omitted
+
+2017-11-23 11:41:45.718  INFO 10488 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 10488 (started by 马宇驰 in G:\redis)
+2017-11-23 11:41:45.738  INFO 10488 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 11:41:45.811  INFO 10488 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:41:45 CST 2017]; root of context hierarchy
+2017-11-23 11:41:47.598  INFO 10488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 11:41:49.856  INFO 10488 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:41:45 CST 2017]; root of context hierarchy
+2017-11-23 11:41:49.954  INFO 10488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 11:41:49.956  INFO 10488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 11:41:49.957  INFO 10488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 11:41:49.958  INFO 10488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 11:41:49.959  INFO 10488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 11:41:49.962  INFO 10488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 11:41:49.963  INFO 10488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 11:41:50.002  INFO 10488 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:41:50.002  INFO 10488 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:41:50.066  INFO 10488 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 11:41:50.362  WARN 10488 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 11:41:50.444  INFO 10488 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 11:41:50.556  INFO 10488 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.496 seconds (JVM running for 6.809)
+2017-11-23 11:41:50.770  INFO 10488 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 11:41:45 CST 2017]; root of context hierarchy
+2017-11-23 11:41:50.774  INFO 10488 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-23 13:41:30.319  INFO 8900 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 8900 (started by 马宇驰 in G:\redis)
+2017-11-23 13:41:30.321  INFO 8900 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 13:41:30.409  INFO 8900 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@485966cc: startup date [Thu Nov 23 13:41:30 CST 2017]; root of context hierarchy
+2017-11-23 13:41:31.740  INFO 8900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 13:41:33.440  INFO 8900 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@485966cc: startup date [Thu Nov 23 13:41:30 CST 2017]; root of context hierarchy
+2017-11-23 13:41:33.532  INFO 8900 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 13:41:33.534  INFO 8900 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 13:41:33.534  INFO 8900 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 13:41:33.535  INFO 8900 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 13:41:33.535  INFO 8900 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 13:41:33.539  INFO 8900 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 13:41:33.540  INFO 8900 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 13:41:33.594  INFO 8900 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:41:33.594  INFO 8900 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:41:33.668  INFO 8900 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:41:34.036  WARN 8900 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 13:41:34.188  INFO 8900 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 13:41:34.339  INFO 8900 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.089 seconds (JVM running for 6.415)
+2017-11-23 13:41:34.372 ERROR 8900 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@78ac1102] to prepare test instance [com.demo.test.TestRedisMQ@6d4c273c]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.demo.test.TestRedisMQ': Unsatisfied dependency expressed through field 'scheduledExecutorService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.concurrent.ScheduledExecutorService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:386) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.concurrent.ScheduledExecutorService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1493) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 31 common frames omitted
+
+2017-11-23 13:41:34.403  INFO 8900 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@485966cc: startup date [Thu Nov 23 13:41:30 CST 2017]; root of context hierarchy
+2017-11-23 13:41:34.405  INFO 8900 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-23 13:44:00.203  INFO 6516 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 6516 (started by 马宇驰 in G:\redis)
+2017-11-23 13:44:00.205  INFO 6516 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 13:44:00.460  INFO 6516 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@485966cc: startup date [Thu Nov 23 13:44:00 CST 2017]; root of context hierarchy
+2017-11-23 13:44:02.124  INFO 6516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 13:44:03.831  INFO 6516 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@485966cc: startup date [Thu Nov 23 13:44:00 CST 2017]; root of context hierarchy
+2017-11-23 13:44:03.940  INFO 6516 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 13:44:03.942  INFO 6516 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 13:44:03.943  INFO 6516 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 13:44:03.944  INFO 6516 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 13:44:03.945  INFO 6516 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 13:44:03.949  INFO 6516 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 13:44:03.951  INFO 6516 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 13:44:03.996  INFO 6516 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:44:03.996  INFO 6516 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:44:04.058  INFO 6516 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:44:04.346  WARN 6516 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 13:44:04.457  INFO 6516 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 13:44:04.605  INFO 6516 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.19 seconds (JVM running for 6.376)
+2017-11-23 13:44:04.668 ERROR 6516 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@78ac1102] to prepare test instance [com.demo.test.TestRedisMQ@27b000f7]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.demo.test.TestRedisMQ': Unsatisfied dependency expressed through field 'scheduledExecutorService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.concurrent.ScheduledExecutorService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:386) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.concurrent.ScheduledExecutorService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1493) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 31 common frames omitted
+
+2017-11-23 13:44:04.690  INFO 6516 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@485966cc: startup date [Thu Nov 23 13:44:00 CST 2017]; root of context hierarchy
+2017-11-23 13:44:04.693  INFO 6516 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-23 13:51:20.481  INFO 8768 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 8768 (started by 马宇驰 in G:\redis)
+2017-11-23 13:51:20.484  INFO 8768 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 13:51:20.714  INFO 8768 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:51:20 CST 2017]; root of context hierarchy
+2017-11-23 13:51:22.302  INFO 8768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 13:51:24.184  INFO 8768 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:51:20 CST 2017]; root of context hierarchy
+2017-11-23 13:51:24.300  INFO 8768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 13:51:24.302  INFO 8768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 13:51:24.303  INFO 8768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 13:51:24.304  INFO 8768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 13:51:24.304  INFO 8768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 13:51:24.308  INFO 8768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 13:51:24.309  INFO 8768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 13:51:24.356  INFO 8768 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:51:24.356  INFO 8768 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:51:24.411  INFO 8768 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:51:24.704  WARN 8768 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 13:51:24.796  INFO 8768 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 13:51:24.948  INFO 8768 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.876 seconds (JVM running for 7.027)
+2017-11-23 13:54:28.411  INFO 8052 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 8052 (started by 马宇驰 in G:\redis)
+2017-11-23 13:54:28.413  INFO 8052 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 13:54:28.530  INFO 8052 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:54:28 CST 2017]; root of context hierarchy
+2017-11-23 13:54:29.985  INFO 8052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 13:54:31.725  INFO 8052 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:54:28 CST 2017]; root of context hierarchy
+2017-11-23 13:54:31.838  INFO 8052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 13:54:31.841  INFO 8052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 13:54:31.842  INFO 8052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 13:54:31.843  INFO 8052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 13:54:31.843  INFO 8052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 13:54:31.852  INFO 8052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 13:54:31.852  INFO 8052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 13:54:31.910  INFO 8052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:54:31.911  INFO 8052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:54:31.982  INFO 8052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:54:32.284  WARN 8052 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 13:54:32.399  INFO 8052 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 13:54:32.524  INFO 8052 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.172 seconds (JVM running for 6.418)
+2017-11-23 13:54:32.667  INFO 8052 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:54:28 CST 2017]; root of context hierarchy
+2017-11-23 13:54:32.669  INFO 8052 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-23 13:56:08.785  INFO 7940 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 7940 (started by 马宇驰 in G:\redis)
+2017-11-23 13:56:08.787  INFO 7940 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 13:56:08.854  INFO 7940 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:56:08 CST 2017]; root of context hierarchy
+2017-11-23 13:56:10.151  INFO 7940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 13:56:11.848  INFO 7940 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:56:08 CST 2017]; root of context hierarchy
+2017-11-23 13:56:11.942  INFO 7940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 13:56:11.943  INFO 7940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 13:56:11.944  INFO 7940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 13:56:11.945  INFO 7940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 13:56:11.945  INFO 7940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 13:56:11.949  INFO 7940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 13:56:11.951  INFO 7940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 13:56:11.997  INFO 7940 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:56:11.997  INFO 7940 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:56:12.048  INFO 7940 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:56:12.334  WARN 7940 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 13:56:12.444  INFO 7940 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 13:56:12.566  INFO 7940 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 4.991 seconds (JVM running for 6.263)
+2017-11-23 13:58:01.899  INFO 8080 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 8080 (started by 马宇驰 in G:\redis)
+2017-11-23 13:58:01.900  INFO 8080 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 13:58:02.019  INFO 8080 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:58:02 CST 2017]; root of context hierarchy
+2017-11-23 13:58:03.393  INFO 8080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 13:58:05.446  INFO 8080 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:58:02 CST 2017]; root of context hierarchy
+2017-11-23 13:58:05.547  INFO 8080 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 13:58:05.549  INFO 8080 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 13:58:05.552  INFO 8080 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 13:58:05.553  INFO 8080 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 13:58:05.554  INFO 8080 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 13:58:05.562  INFO 8080 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 13:58:05.562  INFO 8080 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 13:58:05.609  INFO 8080 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:58:05.609  INFO 8080 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:58:05.766  INFO 8080 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:58:06.092  WARN 8080 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 13:58:06.208  INFO 8080 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 13:58:06.315  INFO 8080 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.578 seconds (JVM running for 6.808)
+2017-11-23 13:58:44.355  INFO 5356 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 5356 (started by 马宇驰 in G:\redis)
+2017-11-23 13:58:44.369  INFO 5356 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 13:58:44.508  INFO 5356 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:58:44 CST 2017]; root of context hierarchy
+2017-11-23 13:58:46.261  INFO 5356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 13:58:48.064  INFO 5356 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:58:44 CST 2017]; root of context hierarchy
+2017-11-23 13:58:48.186  INFO 5356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 13:58:48.187  INFO 5356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 13:58:48.188  INFO 5356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 13:58:48.188  INFO 5356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 13:58:48.189  INFO 5356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 13:58:48.195  INFO 5356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 13:58:48.196  INFO 5356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 13:58:48.242  INFO 5356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:58:48.243  INFO 5356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:58:48.320  INFO 5356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:58:48.701  WARN 5356 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 13:58:49.149  INFO 5356 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 13:58:49.287  INFO 5356 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.664 seconds (JVM running for 6.934)
+2017-11-23 13:59:50.299  INFO 5184 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 5184 (started by 马宇驰 in G:\redis)
+2017-11-23 13:59:50.303  INFO 5184 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 13:59:50.420  INFO 5184 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:59:50 CST 2017]; root of context hierarchy
+2017-11-23 13:59:52.233  INFO 5184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 13:59:54.197  INFO 5184 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 13:59:50 CST 2017]; root of context hierarchy
+2017-11-23 13:59:54.290  INFO 5184 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 13:59:54.292  INFO 5184 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 13:59:54.295  INFO 5184 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 13:59:54.295  INFO 5184 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 13:59:54.296  INFO 5184 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 13:59:54.299  INFO 5184 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 13:59:54.303  INFO 5184 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 13:59:54.351  INFO 5184 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:59:54.352  INFO 5184 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:59:54.415  INFO 5184 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 13:59:54.720  WARN 5184 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 13:59:54.834  INFO 5184 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 13:59:54.966  INFO 5184 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.426 seconds (JVM running for 6.89)
+2017-11-23 14:07:01.554  INFO 5684 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 5684 (started by 马宇驰 in G:\redis)
+2017-11-23 14:07:01.556  INFO 5684 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 14:07:01.617  INFO 5684 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:07:01 CST 2017]; root of context hierarchy
+2017-11-23 14:07:03.780  INFO 5684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 14:07:05.900  INFO 5684 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:07:01 CST 2017]; root of context hierarchy
+2017-11-23 14:07:06.076  INFO 5684 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 14:07:06.078  INFO 5684 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 14:07:06.079  INFO 5684 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 14:07:06.079  INFO 5684 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 14:07:06.082  INFO 5684 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 14:07:06.085  INFO 5684 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 14:07:06.086  INFO 5684 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 14:07:06.144  INFO 5684 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:07:06.147  INFO 5684 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:07:06.221  INFO 5684 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:07:06.526  WARN 5684 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 14:07:06.645  INFO 5684 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 14:07:06.877  INFO 5684 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 6.088 seconds (JVM running for 7.335)
+2017-11-23 14:07:07.118  INFO 5684 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:07:01 CST 2017]; root of context hierarchy
+2017-11-23 14:07:07.121  INFO 5684 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-23 14:07:51.181  INFO 8240 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 8240 (started by 马宇驰 in G:\redis)
+2017-11-23 14:07:51.184  INFO 8240 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 14:07:51.256  INFO 8240 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:07:51 CST 2017]; root of context hierarchy
+2017-11-23 14:07:52.862  INFO 8240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 14:07:54.972  INFO 8240 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:07:51 CST 2017]; root of context hierarchy
+2017-11-23 14:07:55.100  INFO 8240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 14:07:55.102  INFO 8240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 14:07:55.102  INFO 8240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 14:07:55.103  INFO 8240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 14:07:55.103  INFO 8240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 14:07:55.107  INFO 8240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 14:07:55.110  INFO 8240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 14:07:55.168  INFO 8240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:07:55.168  INFO 8240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:07:55.239  INFO 8240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:07:55.605  WARN 8240 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 14:07:55.757  INFO 8240 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 14:07:55.943  INFO 8240 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.648 seconds (JVM running for 6.933)
+2017-11-23 14:10:45.260  INFO 8548 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 8548 (started by 马宇驰 in G:\redis)
+2017-11-23 14:10:45.262  INFO 8548 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 14:10:45.298  INFO 8548 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:10:45 CST 2017]; root of context hierarchy
+2017-11-23 14:10:46.596  INFO 8548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 14:10:48.514  INFO 8548 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:10:45 CST 2017]; root of context hierarchy
+2017-11-23 14:10:48.617  INFO 8548 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 14:10:48.619  INFO 8548 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 14:10:48.620  INFO 8548 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 14:10:48.622  INFO 8548 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 14:10:48.623  INFO 8548 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 14:10:48.628  INFO 8548 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 14:10:48.629  INFO 8548 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 14:10:48.678  INFO 8548 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:10:48.679  INFO 8548 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:10:48.748  INFO 8548 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:10:49.046  WARN 8548 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 14:10:49.124  INFO 8548 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 14:10:49.290  INFO 8548 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.108 seconds (JVM running for 6.412)
+2017-11-23 14:11:52.552  INFO 3908 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 3908 (started by 马宇驰 in G:\redis)
+2017-11-23 14:11:52.554  INFO 3908 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 14:11:52.606  INFO 3908 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:11:52 CST 2017]; root of context hierarchy
+2017-11-23 14:11:53.961  INFO 3908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 14:11:55.640  INFO 3908 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:11:52 CST 2017]; root of context hierarchy
+2017-11-23 14:11:55.753  INFO 3908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 14:11:55.755  INFO 3908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 14:11:55.759  INFO 3908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 14:11:55.759  INFO 3908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 14:11:55.760  INFO 3908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 14:11:55.765  INFO 3908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 14:11:55.768  INFO 3908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 14:11:55.817  INFO 3908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:11:55.817  INFO 3908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:11:55.909  INFO 3908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:11:56.235  WARN 3908 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 14:11:56.308  INFO 3908 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 14:11:56.456  INFO 3908 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.115 seconds (JVM running for 6.45)
+2017-11-23 14:11:56.692  INFO 3908 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@550dbc7a: startup date [Thu Nov 23 14:11:52 CST 2017]; root of context hierarchy
+2017-11-23 14:11:56.695  INFO 3908 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-23 14:38:54.346  INFO 11012 --- [main] com.demo.test.TestRedisMQ                : Starting TestRedisMQ on DESKTOP-V0C5GV7 with PID 11012 (started by 马宇驰 in G:\redis)
+2017-11-23 14:38:54.373  INFO 11012 --- [main] com.demo.test.TestRedisMQ                : No active profile set, falling back to default profiles: default
+2017-11-23 14:38:54.491  INFO 11012 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 14:38:54 CST 2017]; root of context hierarchy
+2017-11-23 14:38:56.201  INFO 11012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-23 14:38:58.304  INFO 11012 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d0a1059: startup date [Thu Nov 23 14:38:54 CST 2017]; root of context hierarchy
+2017-11-23 14:38:58.414  INFO 11012 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getObject]}" onto public com.demo.entity.Demo com.demo.controller.Controller.getObject()
+2017-11-23 14:38:58.416  INFO 11012 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/getString]}" onto public java.lang.String com.demo.controller.Controller.getString()
+2017-11-23 14:38:58.416  INFO 11012 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setString]}" onto public java.lang.Boolean com.demo.controller.Controller.setString()
+2017-11-23 14:38:58.417  INFO 11012 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setTining]}" onto public java.lang.Boolean com.demo.controller.Controller.setTiming()
+2017-11-23 14:38:58.418  INFO 11012 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/setObject]}" onto public java.lang.Boolean com.demo.controller.Controller.setObject()
+2017-11-23 14:38:58.423  INFO 11012 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-23 14:38:58.424  INFO 11012 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-23 14:38:58.463  INFO 11012 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:38:58.463  INFO 11012 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:38:58.526  INFO 11012 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-23 14:38:58.826  WARN 11012 --- [main] arterDeprecationWarningAutoConfiguration : spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2017-11-23 14:38:58.963  INFO 11012 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-23 14:38:59.104  INFO 11012 --- [main] com.demo.test.TestRedisMQ                : Started TestRedisMQ in 5.533 seconds (JVM running for 6.8)
