@@ -16,3 +16,4 @@ logging:
   level: INFO
 mybatis:
   config-location: classpath:MyBatis.xml
+

@@ -8,12 +8,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Example;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class DemoApplicationTests {
 
@@ -25,18 +24,42 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		Long begin = null;
+		Long end = null;
+		begin = System.currentTimeMillis();
 		List<Employee> all = employeeJpa.findAll();
+		end = System.currentTimeMillis();
+		System.out.println(end - begin);
 		all.forEach(employee -> {
 			System.out.println(employee);
 		});
 		EmployeeExample employeeExample = new EmployeeExample();
 		EmployeeExample.Criteria criteria = employeeExample.createCriteria();
 		criteria.andIdEqualTo(1L);
-		all = employeeMapper.selectByExample(employeeExample);
+		begin = System.currentTimeMillis();
+		all = employeeMapper.selectAll();
+		end = System.currentTimeMillis();
+		System.out.println(end - begin);
 		all.forEach(employee -> {
 			System.out.println(employee);
 		});
 
+	}
+	@Test
+	public void test2(){
+		Long begin = null;
+		Long end = null;
+		List<Employee> all = null;
+		EmployeeExample employeeExample = new EmployeeExample();
+		EmployeeExample.Criteria criteria = employeeExample.createCriteria();
+		criteria.andIdEqualTo(1L);
+		begin = System.currentTimeMillis();
+		all = employeeMapper.selectAll();
+		end = System.currentTimeMillis();
+		System.out.println(end - begin);
+		all.forEach(employee -> {
+			System.out.println(employee);
+		});
 	}
 
 }
