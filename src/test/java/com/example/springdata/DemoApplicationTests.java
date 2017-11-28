@@ -4,6 +4,9 @@ import com.example.springdata.entity.Employee;
 import com.example.springdata.entity.EmployeeExample;
 import com.example.springdata.mapper.EmployeeMapper;
 import com.example.springdata.service.EmployeeJpa;
+import com.github.pagehelper.ISelect;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,18 +50,14 @@ public class DemoApplicationTests {
 	}
 	@Test
 	public void test2(){
-		Long begin = null;
-		Long end = null;
-		List<Employee> all = null;
-		EmployeeExample employeeExample = new EmployeeExample();
-		EmployeeExample.Criteria criteria = employeeExample.createCriteria();
-		criteria.andIdEqualTo(1L);
-		begin = System.currentTimeMillis();
-		all = employeeMapper.selectAll();
-		end = System.currentTimeMillis();
-		System.out.println(end - begin);
-		all.forEach(employee -> {
-			System.out.println(employee);
+		PageInfo<Employee> objectPageInfo = PageHelper.startPage(1, 1).doSelectPageInfo(new ISelect() {
+			@Override
+			public void doSelect() {
+				employeeMapper.selectAll();
+			}
+		});
+		objectPageInfo.getList().forEach(object->{
+			System.out.println(object);
 		});
 	}
 

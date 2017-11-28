@@ -3,9 +3,8 @@ package com.example.springdata.mapper;
 import com.example.springdata.entity.Employee;
 import com.example.springdata.entity.EmployeeExample;
 import com.example.springdata.utils.FlowMapper;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface EmployeeMapper extends FlowMapper<Employee> {
     long countByExample(EmployeeExample example);
