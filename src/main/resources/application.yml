@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driverClass: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://172.18.1.112:3306/mytest
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true
+
+server:
+  port: 8090
+  context-path: /
+
+logging:
+  level: INFO
+mybatis:
+  config-location: classpath:MyBatis.xml
