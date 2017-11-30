@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Jdk8/Jdk8.iml" filepath="$PROJECT_DIR$/Jdk8/Jdk8.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo.iml" filepath="$PROJECT_DIR$/dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/grammar/grammar.iml" filepath="$PROJECT_DIR$/grammar/grammar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springtest/springtest.iml" filepath="$PROJECT_DIR$/springtest/springtest.iml" />
     </modules>
   </component>
 </project>
