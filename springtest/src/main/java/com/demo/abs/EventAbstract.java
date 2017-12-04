@@ -8,5 +8,5 @@ import com.demo.inter.Event;
 public abstract class EventAbstract implements Event {
     public void push(){
         System.out.println("this is abstract!");
-    };
+    }
 }

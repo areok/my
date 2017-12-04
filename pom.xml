@@ -12,6 +12,7 @@
         <module>grammar</module>
         <module>Jdk8</module>
         <module>springtest</module>
+        <module>concurrent</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
