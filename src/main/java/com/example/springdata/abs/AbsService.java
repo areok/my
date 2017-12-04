@@ -13,9 +13,9 @@ import java.util.List;
  */
 public abstract class AbsService<E extends Serializable,ID extends Serializable,M extends FlowMapper<E>,D extends JpaRepository<E,ID>>{
     @Autowired
-    private D dao;
+    protected D dao;
     @Autowired
-    private M mapper;
+    protected M mapper;
 
     public E getById(ID id){
         return mapper.selectByPrimaryKey(id);
@@ -24,19 +24,4 @@ public abstract class AbsService<E extends Serializable,ID extends Serializable,
         return dao.findAll();
     }
 
-    public D getDao() {
-        return dao;
-    }
-
-    public void setDao(D dao) {
-        this.dao = dao;
-    }
-
-    public M getMapper() {
-        return mapper;
-    }
-
-    public void setMapper(M mapper) {
-        this.mapper = mapper;
-    }
 }

@@ -15,6 +15,6 @@ import javax.annotation.PostConstruct;
 public class EmployeeService extends AbsService<Employee,Long,EmployeeMapper,EmployeeJpa> {
     @PostConstruct
     public void execute(){
-        System.out.println(super.getMapper().getClass());
+        System.out.println(this.mapper.getClass());
     }
 }
