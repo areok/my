@@ -1,9 +1,8 @@
 package com.example.springdata;
 
 import com.example.springdata.entity.Employee;
-import com.example.springdata.entity.EmployeeExample;
 import com.example.springdata.mapper.EmployeeMapper;
-import com.example.springdata.service.EmployeeJpa;
+import com.example.springdata.service.EmployeeService;
 import com.github.pagehelper.ISelect;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -20,7 +19,7 @@ import java.util.List;
 public class DemoApplicationTests {
 
 	@Autowired
-	private EmployeeJpa employeeJpa;
+	private EmployeeService employeeService;
 
 	@Autowired
 	private EmployeeMapper employeeMapper;
@@ -30,22 +29,16 @@ public class DemoApplicationTests {
 		Long begin = null;
 		Long end = null;
 		begin = System.currentTimeMillis();
-		List<Employee> all = employeeJpa.findAll();
+		List<Employee> all = employeeService.getAll();
 		end = System.currentTimeMillis();
 		System.out.println(end - begin);
 		all.forEach(employee -> {
 			System.out.println(employee);
 		});
-		EmployeeExample employeeExample = new EmployeeExample();
-		EmployeeExample.Criteria criteria = employeeExample.createCriteria();
-		criteria.andIdEqualTo(1L);
-		begin = System.currentTimeMillis();
-		all = employeeMapper.selectAll();
-		end = System.currentTimeMillis();
-		System.out.println(end - begin);
-		all.forEach(employee -> {
-			System.out.println(employee);
-		});
+
+		Employee byId = employeeService.getById(1L);
+
+		System.out.println(byId);
 
 	}
 	@Test
