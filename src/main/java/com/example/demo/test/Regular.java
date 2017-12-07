@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  */
 public class Regular {
     public static void main(String[] args) {
-        String date = "AA";
+        String date = "11A";
         if( Pattern.compile("[a-zA-Z]").matcher(date).find()){
             System.out.println(true);
         }else {
