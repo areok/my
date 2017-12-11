@@ -13,5 +13,7 @@ public class TestZZ {
         }else{
             System.out.println("ss");
         }
+        Pattern PATTERN_NAME_HAS_SYMBOL = Pattern.compile("[:*,/\\-._0-9a-zA-Z]+");
+        System.out.println(PATTERN_NAME_HAS_SYMBOL.matcher(creater));
     }
 }
