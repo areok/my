@@ -1,0 +1,9 @@
+server:
+  port: 9090
+  context-path: /
+spring:
+  datasource:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.18.1.112:3306/vegetable
+    username: root
+    password: 123456
