@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.example.entity.Business;
 import com.example.vegetable.R;
 import com.example.vegetable.adapters.ProductListAdapter;
+import com.example.vegetable.constant.UrlConstant;
 import com.example.vegetable.utils.ShopItem;
 import com.example.vegetable.utils.ShoppingCar;
 import com.google.gson.Gson;
@@ -37,7 +38,7 @@ public class TodayCommendation extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.todaycommendation);
 
-        String url = "http://172.20.1.189:9090/business/getProducts?type=1";
+        String url = UrlConstant.url+"/business/getProducts?type=1";
         HttpClient httpClient = new DefaultHttpClient();
         HttpResponse response;
         HttpGet httpGet = new HttpGet(url);

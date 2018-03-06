@@ -6,6 +6,7 @@ import android.widget.ListView;
 import com.example.entity.Order;
 import com.example.vegetable.R;
 import com.example.vegetable.adapters.OrderAdapter;
+import com.example.vegetable.constant.UrlConstant;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.HttpEntity;
@@ -27,7 +28,7 @@ public class MyOrderActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_activity);
-        String url = "http://172.20.1.189:9090/order/getOrders?userId=1";
+        String url = UrlConstant.url+"/order/getOrders?userId=1";
         HttpClient httpClient = new DefaultHttpClient();
         HttpResponse response;
         HttpGet httpGet = new HttpGet(url);

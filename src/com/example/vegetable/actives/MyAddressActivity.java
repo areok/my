@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.entity.Address;
 import com.example.vegetable.R;
 import com.example.vegetable.adapters.AddressAdapter;
+import com.example.vegetable.constant.UrlConstant;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.HttpEntity;
@@ -30,7 +31,7 @@ public class MyAddressActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.address_activity);
         // TODO 用户id
-        String url = "http://172.20.1.189:9090/address/getAddress?userId=1";
+        String url = UrlConstant.url+"/address/getAddress?userId=1";
         HttpClient httpClient = new DefaultHttpClient();
         HttpResponse response;
         HttpGet httpGet = new HttpGet(url);

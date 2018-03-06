@@ -10,6 +10,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import com.example.vegetable.R;
+import com.example.vegetable.constant.UrlConstant;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -45,7 +46,7 @@ public class LoginActivity extends Activity {
                 String userName = userNameEdit.getText().toString();
                 String password = passwordEdit.getText().toString();
                 String result = null;
-                String url = "http://172.20.1.189:9090/user/login?userName="+userName+"&passWord="+password;
+                String url = UrlConstant.url+"/user/login?userName="+userName+"&passWord="+password;
                 HttpClient httpClient = new DefaultHttpClient();
                 HttpResponse response;
                 HttpGet httpGet = new HttpGet(url);

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.entity.User;
 import com.example.vegetable.R;
 import com.example.vegetable.adapters.ShopAdapter;
+import com.example.vegetable.constant.UrlConstant;
 import com.example.vegetable.utils.ShopItem;
 import com.example.vegetable.utils.ShoppingCar;
 import com.google.gson.Gson;
@@ -213,7 +214,7 @@ public class ShopCarActivity extends Activity implements View.OnClickListener, A
     };
     private String submit(Integer userId,BigDecimal orderTotal){
         String result;
-        String url = "http://172.20.1.189:9090/order/addOrder";
+        String url = UrlConstant.url+"/order/addOrder";
         HttpClient httpClient = new DefaultHttpClient();
         HttpResponse response;
         HttpPost httpPost = new HttpPost(url);

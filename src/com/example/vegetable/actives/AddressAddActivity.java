@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import com.example.vegetable.R;
+import com.example.vegetable.constant.UrlConstant;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -37,7 +38,7 @@ public class AddressAddActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                String url = "http://172.20.1.189:9090/address/addAddress";
+                String url = UrlConstant.url+"/address/addAddress";
                 HttpClient httpClient = new DefaultHttpClient();
                 HttpResponse response;
                 HttpPost httpPost = new HttpPost(url);
