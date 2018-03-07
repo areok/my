@@ -20,12 +20,15 @@ public class TestTemp {
     @Test
     public void test2(){
         int n = -12;
+        //带符号右移
         int n1 = n>>1;
+        //无符号右移  负数在计算机中的存储为该数的补码
         int n2 = n >>> 1;
-        int n3 = (int)Math.pow(2,31)-6;
+        int n3 = (int)Math.pow(2,31)-5;
         System.out.println(n1);
         System.out.println(n2);
-        System.out.print(n3);
+        System.out.println(n3);
+        System.out.println(n1+n2);
 
     }
 }
