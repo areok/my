@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by 马宇驰 on 2017/12/26.
@@ -30,6 +31,7 @@ public class OrderController {
         order.setAddressId(address.getId());
         order.setOrderState("1");
         order.setOrderCreateTime(new Date());
+        order.setOrderNum(UUID.randomUUID().toString() );
         Integer count = orderFacade.save(order);
         if(count == 0){
             return "false";

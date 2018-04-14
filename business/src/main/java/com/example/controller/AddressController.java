@@ -19,7 +19,7 @@ public class AddressController {
 
     @PostMapping("addAddress")
     public String add(@RequestBody Address address){
-
+        address.setStatus(" 00");
         Integer count = addressFacade.save(address);
         if(count == 0){
             return "false";
