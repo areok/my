@@ -2,6 +2,7 @@ package com.example.vegetable.actives;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.util.Log;
@@ -113,11 +114,13 @@ public class ShopCarActivity extends Activity implements View.OnClickListener, A
                 save(shoppingCar);
                 User user = loadUser();
                 submit(user.getuId(),shoppingCar.getShopCount());
+                //TODO 清理我的订单
+                clearCar();
                 //TODO 跳转到订单也
-//                Intent intent = new Intent();
-//                intent.setClass(ShopCarActivity.this,MyAddressActivity.class);
-//                startActivity(intent);
-//                finish();
+                Intent intent = new Intent();
+                intent.setClass(ShopCarActivity.this,MyOrderActivity.class);
+                startActivity(intent);
+                finish();
                 break;
         }
     }
@@ -182,6 +185,14 @@ public class ShopCarActivity extends Activity implements View.OnClickListener, A
             return (ShoppingCar) shoppingCar;
         }
         return null;
+    }
+
+    public void clearCar(){
+        File file = new File("/data/data/com.example.vegetable/files/shoppingcar");
+        if (file.exists()) {
+            Log.d("清空购物车", "----");
+            file.delete();
+        }
     }
 
     private DataSetObserver sumObServer = new DataSetObserver() {

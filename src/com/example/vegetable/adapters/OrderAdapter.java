@@ -41,10 +41,10 @@ public class OrderAdapter extends ArrayAdapter<Order> {
         TextView orderTotal = view.findViewById(R.id.order_total);
         TextView orderCreateTime = view.findViewById(R.id.order_create_time);
 
-        orderNum.setText(order.getOrderNum());
-        orderState.setText(order.getOrderState());
-        orderTotal.setText(order.getOrderTotal()+"元");
-        orderCreateTime.setText(order.getOrderCreateTime().toString());
+        orderNum.setText("订单编号:"+order.getOrderNum());
+        orderState.setText("订单状态:"+order.getOrderState());
+        orderTotal.setText("订单总价:"+order.getOrderTotal()+"元");
+        orderCreateTime.setText("订单创建时间:"+order.getOrderCreateTime().toString());
         return view;
     }
 }
