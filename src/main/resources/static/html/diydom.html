@@ -24,23 +24,15 @@
 		
 		var setting = {
 			view: {
-				showIcon: showIconForTree,
 				addHoverDom: addHoverDom,
-				removeHoverDom: removeHoverDom,
-				addDiyDom: addDiyDom
+				removeHoverDom: removeHoverDom
 			}
 		};
 
 		var zNodes =[
 			{id:1, name:"hover事件显示控件", open:true,
 				children:[
-					   {id:11, name:"按钮1",children:[
-						   {id:21, name:"按钮1"},
-						   {id:22, name:"按钮2"},
-						   {id:23, name:"下拉框"},
-						   {id:24, name:"文本"},
-						   {id:25, name:"超链接"}
-					   ]},
+					   {id:11, name:"按钮1"},
 					   {id:12, name:"按钮2"},
 					   {id:13, name:"下拉框"},
 					   {id:141, name:"文本1"},
@@ -60,25 +52,20 @@
 
 		function addHoverDom(treeId, treeNode) {
 			if (treeNode.parentNode && treeNode.parentNode.id!=1) return;
+			console.log(treeId)
 			var aObj = $("#" + treeNode.tId + IDMark_A);
-			if (treeNode.id == 11) {
+
 				if ($("#diyBtn_"+treeNode.id).length>0) return;
 				var editStr = "<span id='diyBtn_space_" +treeNode.id+ "' >&nbsp;</span><span class='button icon03' id='diyBtn_" +treeNode.id+ "' title='"+treeNode.name+"' onfocus='this.blur();'></span>";
 				aObj.append(editStr);
 				var btn = $("#diyBtn_"+treeNode.id);
 				if (btn) btn.bind("click", function(){alert("diy Button for " + treeNode.name);});
-			}
+
 		}
 
 		function removeHoverDom(treeId, treeNode) {
 			if (treeNode.parentTId && treeNode.getParentNode().id!=1) return;
-			if (treeNode.id == 15) {
-				$("#diyBtn1_"+treeNode.id).unbind().remove();
-				$("#diyBtn2_"+treeNode.id).unbind().remove();
-			} else {
-				$("#diyBtn_"+treeNode.id).unbind().remove();
-				$("#diyBtn_space_" +treeNode.id).unbind().remove();
-			}
+			$("#diyBtn_"+treeNode.id).unbind().remove();
 		}
 
 		function addDiyDom(treeId, treeNode) {
@@ -113,18 +100,15 @@
 			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
 		});
 		//-->
-		function showIconForTree(treeId, treeNode) {
-			return !treeNode.isParent;
-		};
 	</SCRIPT>
 	<style type="text/css">
-		.ztree li span.demoIcon{padding:0 2px 0 10px;}
-		.ztree li span.button.icon01{margin:0; background: url(/css/zTreeStyle/img/diy/3.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
-		.ztree li span.button.icon02{margin:0; background: url(/css/zTreeStyle/img/diy/4.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
-		.ztree li span.button.icon03{margin:0; background: url(/css/zTreeStyle/img/diy/5.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
-		.ztree li span.button.icon04{margin:0; background: url(/css/zTreeStyle/img/diy/6.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
-		.ztree li span.button.icon05{margin:0; background: url(/css/zTreeStyle/img/diy/7.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
-		.ztree li span.button.icon06{margin:0; background: url(/css/zTreeStyle/img/diy/8.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.demoIcon{padding:0 2px 0 10px;}
+.ztree li span.button.icon01{margin:0; background: url(/css/zTreeStyle/img/diy/3.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.icon02{margin:0; background: url(/css/zTreeStyle/img/diy/4.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.icon03{margin:0; background: url(/css/zTreeStyle/img/diy/5.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.icon04{margin:0; background: url(/css/zTreeStyle/img/diy/6.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.icon05{margin:0; background: url(/css/zTreeStyle/img/diy/7.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.icon06{margin:0; background: url(/css/zTreeStyle/img/diy/8.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
 	</style>
  </HEAD>
 
