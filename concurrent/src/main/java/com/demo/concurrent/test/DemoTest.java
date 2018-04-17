@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
  * Created by 马宇驰 on 2017/12/1.
  */
 public class DemoTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ConcurrentHashMap<String, String> stringStringHashMap = new ConcurrentHashMap<String, String>();
        //HashMap<String, String> stringStringHashMap = new HashMap<String, String>();
         try {
@@ -27,9 +27,11 @@ public class DemoTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        stringStringHashMap.forEach((k,v)->{
+   /*     stringStringHashMap.forEach((k,v)->{
             System.out.println(k+"-"+v);
-        });
+        });*/
+        System.out.println(stringStringHashMap.size());
+        Thread.sleep(1000);
         System.out.println(stringStringHashMap.size());
     }
 }
