@@ -19,4 +19,8 @@ public class ResultVo {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public static void main(String[] args) {
+        new ResultVo();
+    }
 }

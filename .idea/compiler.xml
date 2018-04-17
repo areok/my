@@ -29,7 +29,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="concurrent" />
         <module name="grammar" />
       </profile>
       <profile default="false" name="Annotation profile for springtest" enabled="true">
@@ -39,9 +38,16 @@
         <processorPath useClasspath="true" />
         <module name="springtest" />
       </profile>
+      <profile default="false" name="Annotation profile for concurrent" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="concurrent" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="concurrent" target="1.6" />
+      <module name="concurrent" target="1.8" />
       <module name="dubbo" target="1.6" />
       <module name="dubbo (1)" target="1.6" />
       <module name="dubbo (2)" target="1.6" />

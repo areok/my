@@ -6,6 +6,7 @@ package com.demo.grammar.constract;
 public class A {
     String a;
     public A(){
+        this("1");
         System.out.println("constractA1");
     }
     public A(String a){

@@ -1,5 +1,7 @@
 package com.demo.concurrent.thread;
 
+import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -11,9 +13,12 @@ public class ExampleThread implements Runnable {
 
     private final CountDownLatch countDownLatch;
 
-    public ExampleThread(String msg,CountDownLatch countDownLatch) {
+    private Map<String,String> map;
+
+    public ExampleThread(String msg,CountDownLatch countDownLatch,Map<String,String> map) {
         this.msg = msg;
         this.countDownLatch = countDownLatch;
+        this.map = map;
     }
 
     @Override
@@ -23,7 +28,8 @@ public class ExampleThread implements Runnable {
            // System.out.println(i+"->"+msg);
             System.out.printf("%d-----------------%s%n",i,msg);
             i++;
-        }while (i<100);
+            map.put(UUID.randomUUID().toString(),i+"");
+        }while (i<10000);
         countDownLatch.countDown();
     }
 }
