@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" th:href="@{/css/demo.css}" />
+</head>
+<body>
+
+<!--/* Content of this page will be decorated by the elements of layout.html (task/layout) */-->
+<div layout:fragment="content">
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs" id="assignVisitorTab">
+                    <li class="active"><a href="#custInfo" data-toggle="tab" plug-action="custInfo"
+                           action-url="/aa"
+                           th:attr="data-buss-no='aa'">AA</a></li>
+                    <li><a href="#mortageInfo" data-toggle="tab" plug-action="mortageInfo"
+                           action-url="/bb"
+                           th:attr="data-buss-no='bb'">BB</a></li>
+                </ul>
+                <!-- 每个tab页对应的内容 -->
+                <div id="myTabContent" class="tab-content">
+                    <div class="box box-success tab-pane fade active " id="custInfo">
+                    </div>
+                    <div class="box box-success tab-pane fade" id="mortageInfo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script th:inline="javascript">
+        var flag = [[${flag}]];
+    </script>
+    <script th:src="@{/js/plug/jquery.min.js}"></script>
+    <script th:src="@{/js/plug/plugs_1.0.1.js}"></script>
+
+</div>
+</body>
+
+</html>
