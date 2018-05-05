@@ -1,0 +1,27 @@
+<div class="box-header">
+    <h3 class="box-title">筛选条件</h3>
+    <!--<div th:if="${#lists.containsAll(#strings.listSplit('120',':'),queryVo.taskTypeList)}" class="box-tools pull-right">-->
+        <!--<button type="button" class="btn btn-block btn-success fa fa-plus" onclick="javascript:window.location.href='/perfectInformation/addView'">新增</button>-->
+    <!--</div>-->
+</div>
+<div class="box-body">
+    <div class="form-group">
+        <label class="col-xs-2 control-label">订单编号:</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" th:value="${queryVo.bussNo}" name="queryVo.bussNo" placeholder="订单编号"/>
+        </div>
+        <label class="col-xs-2 control-label">借款人姓名:</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" th:value="${queryVo.custName}" name="queryVo.custName" placeholder="借款人姓名"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-1">
+            <button type="submit" id='sear1ch' class="btn btn-sm btn-block btn-success">查询</button>
+        </div>
+        <div class="col-xs-5"></div>
+    </div>
+    <script th:src="@{/static/admin/js/commons/search.js(v=${application.version})}"></script>
+</div>

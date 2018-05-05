@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>后台系统</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <link rel="shortcut icon" href="/adminv2/dist/img/favicon.ico"/>
+    <link rel="stylesheet" href="/201505091706/css/fileinput.min.css"/>
+  <link rel="stylesheet" href="/adminv2/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/adminv2/libs/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/adminv2/libs/ionicons.min.css"/>
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/adminv2/plugins/datatables/dataTables.bootstrap.css"/>
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/adminv2/plugins/daterangepicker/daterangepicker.css"/>
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/adminv2/plugins/datepicker/datepicker3.css"/>
+  <link rel="stylesheet" href="/adminv2/dist/css/AdminLTE.min.css"/>
+  <link rel="stylesheet" href="/adminv2/dist/css/skins/_all-skins.min.css"/>
+  <link rel="stylesheet" href="/admin/css/bootstrap-table.css"/>
+  <link rel="stylesheet" href="/admin/css/bootstrap-editable.css"/>
+  <link rel="stylesheet" href="/admin/css/base.css?v=0.0.2"/>
+  <link rel="stylesheet" href="/admin/css/webuploader.css?v=0.0.2"/>
+  <link rel="stylesheet" href="/admin/css/filter/filter.css"/>
+  <link rel="stylesheet" href="/admin/css/huifa.css"/>
+    <script type="application/javascript" src="/admin/js/jquery.min.js"></script>
+
+    <style type="text/css">
+
+        *{ margin:0; padding:0}
+        #imageShowDiv1{  position:relative;-moz-user-select:none }
+        #imageShowDiv1 #pre{ position:absolute; margin-top:5%; display:block; height:80%; background:#003366;filter:Alpha(Opacity=0);opacity:0;  left:0; top:0; z-index:2; width:50%;  cursor:url(/admin/img/left.png),auto; }
+        #imageShowDiv1 #next{ position:absolute;z-index:2;margin-top:5%; display:block; background:#00CC99;filter:Alpha(Opacity=0);opacity:0; height:80%;width:50%; top:0; right:0; cursor:url(/admin/img/right.png), auto;}
+    </style>
+  </head>
+  <body class="hold-transition skin-blue fixed sidebar-mini">
+  <div th:replace="fragments/js :: js"></div>
+<div class="wrapper">
+	<div th:replace="fragments/header :: header">
+    <!-- ============================================================================ -->
+    <!-- This content is only used for static prototyping purposes (natural templates)-->
+    <!-- and is therefore entirely optional, as this markup fragment will be included -->
+    <!-- from "fragments/header.html" at runtime.                                     -->
+    <!-- ============================================================================ -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Static header</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div th:replace="fragments/sidebar :: sidebar">
+        55555
+    </div>
+    <div class="content-wrapper">
+	    <div layout:fragment="content">
+	        <!-- ============================================================================ -->
+	        <!-- This content is only used for static prototyping purposes (natural templates)-->
+	        <!-- and is therefore entirely optional, as this markup fragment will be included -->
+	        <!-- from "fragments/header.html" at runtime.                                     -->
+	        <!-- ============================================================================ -->
+	        <h1>Static content for prototyping purposes only</h1>
+	        <p>
+	            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	            Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+	            Phasellus et placerat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	            Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+	            Phasellus et placerat elit.
+	        </p>
+	
+	    </div>
+	    <div>
+	    	<!--<script th:inline="javascript">-->
+          		<!--var lockMessage = [[${lockMessage}]];-->
+          		<!--var lockedTime = [[${lockedTime}]];-->
+          	<!--</script>-->
+	    	<!--<script th:src="@{/static/admin/js/commons/goback.js(v=${application.version})}"></script>-->
+	    </div>
+	</div> 
+	<div th:replace="fragments/footer :: footer">&copy; 2014 The Static Templates</div>
+
+    <div id="imageShowDiv1"><span id="pre" onclick="TheLast()" ></span> <span id="next" onclick="TheNext()"></span></div>
+	
+</div>
+</body>
+</html>

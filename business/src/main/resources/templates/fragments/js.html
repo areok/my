@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  
+  </head>
+<body>
+    <!--/*  Multiple fragments may be defined in one file */-->
+    <div th:fragment="js">
+        <!--<script th:src="@{/static/adminv2/plugins/jQuery/jquery-2.2.3.min.js(v=${application.version})}"></script>-->
+		<script th:src="@{/static/adminv2/plugins/jQuery/jquery.min.js(v=${application.version})}"></script>
+		<script th:src="@{/static/adminv2/bootstrap/js/bootstrap.min.js(v=${application.version})}"></script>
+		<script th:src="@{/static/adminv2/plugins/slimScroll/jquery.slimscroll.min.js(v=${application.version})}"></script>
+		<script th:src="@{/static/adminv2/plugins/fastclick/fastclick.js(v=${application.version})}"></script>
+
+		<!-- date-range-picker 
+		<script th:src="@{/static/adminv2/libs/moment.min.js(v=${application.version})}"></script>
+		<script th:src="@{/static/adminv2/plugins/daterangepicker/daterangepicker.js(v=${application.version})}"></script> -->
+		
+		<!-- bootstrap datepicker -->
+		<script th:src="@{/static/adminv2/plugins/datepicker/bootstrap-datepicker.js(v=${application.version})}"></script>
+		<script th:src="@{/static/adminv2/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js(v=${application.version})}"></script>
+		
+		
+		<!-- bootstrap typeahead 自动填充 -->
+		<script th:src="@{/static/adminv2/bootstrap/js/bootstrap3-typeahead.min.js(v=${application.version})}"></script>
+		
+		<script th:src="@{/static/admin/js/plugins/bootstrap-table.js(v=${application.version})}"></script>
+		
+		<script th:src="@{/static/adminv2/dist/js/app.min.js(v=${application.version})}"></script>
+		<!--script th:src="@{/static/adminv2/dist/js/demo.js(v=${application.version})}"></script-->
+		<script th:src="@{/static/admin/js/datePicker/WdatePicker.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/commons/utils.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/commons/common.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/commons/cms.dialog.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/commons/pagingHelper.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/commons/uuid.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/plugins/bootstrap-paginator.min.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/plugins/bootstrap-paginator.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/plugins/bootstrap-editable.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/plugins/bootstrap-table-editable.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/plugins/address.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/plugins/jquery.cookie.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/plugins/jquery.validate.js(v=${application.version})}"></script>
+    	<script th:src="@{/static/admin/js/commons/validator.js(v=${application.version})}"></script>
+    	<script th:src="@{/static/admin/js/plugin/plugs_1.0.1.js(v=${application.version})}"></script>
+    	<script th:src="@{/static/admin/js/plugin/webuploader.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/imgage/uploadplug.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/imgage/imageUpload_3.js(v=${application.version})}"></script>
+		<script th:src="@{/static/admin/js/laydate/laydate.js(v=${application.version})}"></script>
+		
+		<script>
+			function qxclose(){
+				$("input[name='newPassWordOne']").val("");
+				$("input[name='newPassWord']").val("");
+				$("input[name='oldPassword']").val("");
+			}
+
+
+			function modifyPWDClick() {
+				// 校验
+				var newPassWordOne = $("input[name='newPassWordOne']").val();
+				var newPassWord = $("input[name='newPassWord']").val();
+				var oldPassword = $("input[name='oldPassword']").val();
+				if (oldPassword === "") {
+					alert("旧密码不可以为空")
+					return false;
+				} else if (newPassWordOne === "" || newPassWord === "") {
+					alert("新密码不可以为空")
+					return false;
+				} else if (!(/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/).test(newPassWordOne) || !(/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/).test(newPassWord)) {
+					alert("新密码格式不正确，密码由大小写字母、数字中至少两种组成，长度在6~18位之间")
+					return false;
+				} else if (newPassWordOne !== newPassWord) {
+					alert("两次新密码输入不一致")
+					return false;
+				}
+				var restPoss = {
+					"newPassWord": newPassWord,
+					// "newPassWordOne": newPassWordOne,
+					"oldPassWord": oldPassword
+				}
+				$.ajax({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/financeUserLogin/changePassword",
+					dataType: "json",
+					data: JSON.stringify(restPoss),
+					success: function(data) {
+						console.log(data)
+						if (data.execute.code === -3) {
+							window.location.href = "/views/login.html";
+						} else if (data.execute.status == "1") {
+							alert("密码修改成功")
+							$("input[name='newPassWordOne']").val("");
+							$("input[name='newPassWord']").val("");
+							$("input[name='oldPassword']").val("");
+							document.getElementById('qxclose').click();
+						} else if (data.execute.status == "3") {
+							alert("原密码错误");
+							$("input[name='newPassWordOne']").val("");
+							$("input[name='newPassWord']").val("");
+							$("input[name='oldPassword']").val("");
+						} else if (data.execute.status == "2") {
+							alert("用户不存在");
+							$("input[name='newPassWordOne']").val("");
+							$("input[name='newPassWord']").val("");
+							$("input[name='oldPassword']").val("");
+						}
+					},
+					error: function(error) {
+						console.log(error)
+					}
+				});
+			}
+
+
+
+		// 菜单显示控制
+
+		/*<![CDATA[*/
+		$(function(){
+		  var curr_menu_url = window.location.pathname;
+		  $('.treeview-menu').find('a[href="'+curr_menu_url+'"]').parent().addClass('active').parent().parent().addClass('active');
+		});
+		/*
+        function inputUserPwd() {
+            if($("#ensurePwd").is(":hidden")){
+                $("#ensurePwd").show();
+            };
+        }
+
+        function validateUserPwd() {
+            if($("#previousPwd").val()==''||$("#previousPwd")==undefined){
+                alert("请输入您的密码！！！");
+                return;
+            }
+
+            var person = {};
+            person.nameEn = $(".hidden-id").val();
+            person.pwd = $("#previousPwd").val();
+            $.ajax({
+                url         : '/userManage/queryPersonDetails',
+                contentType : 'application/x-www-form-urlencoded',
+                type        : 'post',
+				data		:person,
+                success : function (result) {
+                    if(result.resultCode=='0000' ){
+                        $("#id").val(result.person.id);
+                        $("#name_en").val(result.person.nameEn);
+                        $("#name").val(result.person.name);
+                        $("#pwd").val(result.person.pwd);//密码
+                        $("#phone").val(result.person.phone);
+                        $("#mail").val(result.person.email);
+                        $(".originPwd").val(result.person.pwd);
+
+                        if(!$("#ensurePwd").is(":hidden")){
+                            $("#ensurePwd").hide();
+                            $("#ensurePwd").find("input").val('');
+                        };
+
+                        if($("#Modal").is(":hidden")){
+                            $("#Modal").show();
+                        }else{
+                            $("#Modal").find("input").val('');
+                            $("#Modal").hide();
+                        }
+
+                        if($('#pwd').attr("readonly")==false){
+                            $("#pwd").attr("readonly","readonly")
+                        }
+                    }else if(result.resultCode=='0001'){
+                        alert("密码错误，请重新输入");
+                        return;
+					}else {
+                        alert("请联系系统管理员");
+                        return;
+                    }
+                },
+                error:function () {
+                    alert("请联系系统管理员");
+                    return;
+                }
+            })
+        }
+
+        function closeMask(id){
+            if(id=='Modal'){
+                if(!$("#Modal").is(":hidden")){
+                    $("#Modal").find("input").val('');
+                    $("#Modal").hide();
+                    $("#pwd2").hide();
+                    $(".resetPwd").text("修改密码");
+                    if($('#pwd').attr("readonly")==false){
+                        $("#pwd").attr("readonly","readonly")
+                    }
+                }
+            }else{
+                if(!$("#ensurePwd").is(":hidden")){
+                    $("#ensurePwd").find("input").val('');
+                    $("#ensurePwd").hide();
+                }
+            }
+
+        }
+
+		function updatePersonInfo() {
+			if($("#Modal").is(":hidden")){
+				return;
+			}
+
+			var id = $("#id").val();//id
+			var name_en = $("#name_en").val();//登录名
+			var name = $("#name").val();
+			var pwd = $("#pwd").val();//密码
+			var phone = $("#phone").val();
+			var email = $("#mail").val();
+
+
+			if(name==''){
+                alert('请填写姓名');
+                return;
+			}
+
+			if(!validatePwd2()){
+			    return;
+			}
+
+
+            if (!/^1\d{10}$/.test(phone)) {
+                alert('请填写正确的手机号');
+                return;
+            }
+
+            if(email==''){
+				alert("请输入邮箱");
+				return;
+			}
+
+            var data = {};
+            data.id = id;
+            data.nameEn = name_en;
+            data.name = name;
+            data.pwd = pwd;
+            data.phone = phone;
+            data.email = email;
+			$.ajax({
+                url         : '/userManage/updatePersonInfo',
+                contentType : 'application/x-www-form-urlencoded',
+                type        : 'post',
+                data        :  data,
+                success : function (result) {
+                    if(result.resultCode=='0000'){
+						alert("修改成功");
+                        closeMask('Modal');
+                    }else{
+                        alert("请联系系统管理员");
+                    }
+                },
+                error:function () {
+                    alert("请联系系统管理员");
+                }
+			})
+
+
+
+        }
+
+        function resetPwd() {
+		    var buttonText = $(".resetPwd").text();
+		    if(buttonText=='取消'){
+				$("#pwd2").val('');
+				$("#pwd2").hide();
+				$(".resetPwd").text("修改密码");
+                $("#pwd").val($(".originPwd").val());
+                $("#pwd").attr("readonly","readonly")
+			}else{
+                $(".resetPwd").text("取消");
+                $("#pwd2").show();
+                $("#pwd").removeAttr("readonly");
+			}
+        }
+
+        function validatePwd2() {
+			var pwd = $("#pwd").val();
+			var pwd2 = $("#pwd2").val();
+			if($(".resetPwd").text()=='取消'){
+                if(pwd==''||pwd2==''){
+                    alert("请输入密码或确认密码");
+                    return false;
+                }else if(pwd!=pwd2){
+                    alert("密码和确认密码不一致，请重新输入");
+                    return false;
+                }
+                return true;
+			}else{
+			    if(pwd==''){
+//                    alert("请输入密码");
+                    return false;
+				}else{
+				    return true;
+				}
+			}
+
+        }
+
+		/*]]>*/
+		</script>
+    </div>
+</body>
+</html>
+

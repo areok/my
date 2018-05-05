@@ -171,4 +171,10 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
+
+  <select id="queryAllOrders" resultType="com.example.entity.OrderInfo">
+    SELECT t1.id as id,t1.order_total as total, t1.order_num as num ,t1.order_state as status,t2.u_name as userName ,t3.user_address as address FROM v_order t1 LEFT JOIN v_user t2 ON t1.user_id = t2.u_id LEFT JOIN v_address t3
+    ON t1.address_id = t3.id
+  </select>
 </mapper>

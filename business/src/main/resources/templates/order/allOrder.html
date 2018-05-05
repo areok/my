@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" href="/adminv2/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/adminv2/libs/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/adminv2/libs/ionicons.min.css"/>
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/adminv2/plugins/datatables/dataTables.bootstrap.css"/>
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="/adminv2/plugins/daterangepicker/daterangepicker.css"/>
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="/adminv2/plugins/datepicker/datepicker3.css"/>
+    <link rel="stylesheet" href="/adminv2/dist/css/AdminLTE.min.css"/>
+    <link rel="stylesheet" href="/adminv2/dist/css/skins/_all-skins.min.css"/>
+</head>
+<body>
+
+<!--/* Content of this page will be decorated by the elements of layout.html (task/layout) */-->
+<div layout:fragment="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1 style="font-size: 20px;">
+            我的订单列表
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="box box-info">
+                    <!--<form class="form-horizontal" action="/wyjhk/list" id="searchForm" method="post">-->
+                        <!--<div th:replace="fragments/search1"> 列表搜索条件</div>-->
+                    <!--</form>-->
+                </div>
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">订单列表</h3>
+                    </div>
+                    <div class="box-body">
+                        <table id="example1" class="main-list-table table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th style="text-align:center">序号</th>
+                                <th style="text-align:center">订单价值</th>
+                                <th style="text-align:center">订单数量</th>
+                                <th style="text-align:center">订单用户</th>
+                                <th style="text-align:center">配送地址</th>
+                                <th style="text-align:center">订单状态</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr style="text-align:center" th:each="order : ${orders}">
+                                <td th:text="${order.id}">>业务编号</td>
+                                <td th:text="${order.total}">业务编号</td>
+                                <td th:text="${order.num}">业务编号</td>
+                                <td th:text="${order.userName}">业务编号</td>
+                                <td th:text="${order.address}">业务编号</td>
+                                <td th:text="${order.status}">业务编号</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- page -->
+                        <!--<div th:replace="fragments/page :: page"> page </div>-->
+
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <script>
+
+    </script>
+</div>
+</body>
+</html>

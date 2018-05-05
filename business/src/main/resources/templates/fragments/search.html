@@ -1,0 +1,58 @@
+<div class="box-header">
+    <h3 class="box-title">筛选条件</h3>
+    <!--<div th:if="${#lists.containsAll(#strings.listSplit('120',':'),queryVo.taskTypeList)}" class="box-tools pull-right">-->
+        <!--<button type="button" class="btn btn-block btn-success fa fa-plus" onclick="javascript:window.location.href='/perfectInformation/addView'">新增</button>-->
+    <!--</div>-->
+</div>
+<div class="box-body">
+    <div class="form-group">
+        <label class="col-xs-2 control-label">订单编号:</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" th:value="${queryVo.bussNo}" name="queryVo.bussNo" placeholder="订单编号"/>
+        </div>
+        <label class="col-xs-2 control-label">借款人姓名:</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" th:value="${queryVo.custName}" name="queryVo.custName" placeholder="借款人姓名"/>
+        </div>
+        <label class="col-xs-2 control-label">还款状态:</label>
+        <div class="col-xs-4">
+            <select class="form-control" name="queryVo.reStatus">
+                <option th:each="reStatu:${application.reStatus.values()}" th:value="${reStatu.code}"
+                        th:selected="${queryVo['reStatus']?:''}==${reStatu.code}"
+                        th:text="${reStatu.message}"></option>
+            </select>
+        </div>
+        <label class="col-xs-2 control-label">出借人名称:</label>
+        <div class="col-xs-4">
+            <select id="lenderNo" class="form-control" name="queryVo.lenderNo">
+                <option value="">请选择</option>
+                <option th:each="lenderNo:${application.productTypeEnum.getChild(application.productTypeEnum.ZF)}" th:value="${lenderNo.name()}"
+                        th:selected="${queryVo['lenderNo']?:''}==${lenderNo.name()}"
+                        th:text="${lenderNo.value}"></option>
+            </select>
+        </div>
+        <label class="col-xs-2 control-label">出借计划:</label>
+        <input id = "lenderPlanNoSelected" type="text" th:value="${queryVo.lenderPlanNo}" hidden="hidden"/>
+        <div class="col-xs-4">
+            <select id="lenderPlanNo" class="form-control" name="queryVo.lenderPlanNo">
+            </select>
+        </div>
+        <label class="col-xs-2 control-label">应还款日:</label>
+        <div class="col-xs-4  pretty-date">
+            <label><input style="width:100px;" type="text" id="startTime" name="queryVo.reShouldDateStart" class="Wdate"
+                          onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" th:value="${queryVo.reShouldDateStart}" />--</label>
+            <label><input style="width:100px;"  type="text" id="endTime" name="queryVo.reShouldDateEnd" class="Wdate"
+                          onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" th:value="${queryVo.reShouldDateEnd}" /></label>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6"></div>
+        <div class="col-xs-1">
+            <button type="submit" id='sear1ch' class="btn btn-sm btn-block btn-success">查询</button>
+        </div>
+        <div class="col-xs-5"></div>
+    </div>
+    <script th:src="@{/static/admin/js/commons/search.js(v=${application.version})}"></script>
+</div>

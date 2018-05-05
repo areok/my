@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <link rel="stylesheet" href="/adminv2/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/adminv2/libs/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/adminv2/libs/ionicons.min.css"/>
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/adminv2/plugins/datatables/dataTables.bootstrap.css"/>
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/adminv2/plugins/daterangepicker/daterangepicker.css"/>
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/adminv2/plugins/datepicker/datepicker3.css"/>
+  <link rel="stylesheet" href="/adminv2/dist/css/AdminLTE.min.css?v=1"/>
+  <link rel="stylesheet" href="/adminv2/dist/css/skins/_all-skins.min.css?v=1"/>
+</head>
+<body>
+<!-- Navbar -->
+<div  th:fragment="sidebar">
+  <aside class="main-sidebar">
+    <section >
+      <ul class="sidebar-menu">
+        <li  class="treeview">
+          <a href="/order/getAllOrders"><i class="" th:text="全部订单" style="font-style: normal;"></i></a>
+          </li>
+      </ul>
+      <ul class="sidebar-menu">
+        <li class="treeview">
+        <a href="/business/getAllProducts"><i class="" th:text="全部商品" style="font-style: normal;"></i></a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <link rel="stylesheet" href="/adminv2/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/adminv2/libs/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/adminv2/libs/ionicons.min.css"/>
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/adminv2/plugins/datatables/dataTables.bootstrap.css"/>
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/adminv2/plugins/daterangepicker/daterangepicker.css"/>
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/adminv2/plugins/datepicker/datepicker3.css"/>
+  <link rel="stylesheet" href="/adminv2/dist/css/AdminLTE.min.css"/>
+  <link rel="stylesheet" href="/adminv2/dist/css/skins/_all-skins.min.css"/>
+  </head>
+<body>
+    <!--/*  Multiple fragments may be defined in one file */-->
+    <div  th:fragment="page">
+		<style type="text/css">
+		/* .paging {
+		  position: relative;
+		  display: inline-block;
+		  vertical-align: middle;
+		}
+		.paging select{
+		    height:33px;
+		    width:100px;
+		    margin-bottom:3px; 
+		    margin-right:30px;
+		} */
+		</style>
+		<div th:with="condition=${pageInfo!=null and pageInfo.total != 0}">
+			<input type="hidden" name="pageNum" id="pageNum" th:value="${pageInfo.pageNum}?:0"/>
+			<input type="hidden" name="pages" id="pages" th:value="${pageInfo.pages}"/>
+			<div th:if="${condition}" class="row" style="margin:1px">
+				<label class="control-label col-xs-1" style="width:70px;line-height: 39px;padding-right:0px;padding-left:0px">每页显示<strong>:</strong></label>
+				<div class="paging  col-xs-1" style="padding-left:0px;padding-right:0px;width:80px;">
+				    <select id="pageSize" class="form-control">
+					    <option value="10" th:selected="${pageInfo.pageSize == 10}">10条</option>
+					    <option value="20" th:selected="${pageInfo.pageSize == 20}">20条</option>
+					    <option value="50" th:selected="${pageInfo.pageSize == 50}">50条</option>
+					    <option value="100" th:selected="${pageInfo.pageSize == 100}">100条</option>
+				    </select>
+				</div>
+				<label class="control-label col-xs-1" style="width:60px;line-height: 39px;padding-right:0px">跳转到</label>
+				<div class="paging  col-xs-1" style="padding-left:0px;padding-right:0px;width:80px;">
+				  <input class="form-control" type="text" id="goNumPage"/>
+				</div>
+				<label class="control-label col-xs-1" style="width:30px;line-height: 39px;padding:0 5px 0 5px">页</label>
+				<div class="paging  col-xs-1" style="padding-left:0px;padding-right:10px;width:50px;">
+				  <input class="form-control" type="button" id="goPage" style="background-color:#eee" value="go"/>
+				</div>
+				<div class="paging  row" style="height:50px;margin-left:5px;float:left;padding-top:4px;">
+				    <ul id='paginator' style="margin:0px"></ul>
+				</div>
+			</div>
+			<div th:unless="${condition}">没有查询到任何内容</div>
+		</div>
+    </div>
+</body>
+</html>
+
