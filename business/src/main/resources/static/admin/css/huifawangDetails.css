@@ -1,0 +1,126 @@
+html,body{
+    height: 100%;
+}
+.wrap{
+    background-color: #ecf0f5;
+    font-size: 14px;
+    color:#333;
+    min-height: 100%;
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex-direction:column;
+    flex-direction:column;
+}
+.head{
+    line-height: 50px;
+    border-bottom: 3px solid #4e98d7;
+}
+.head div{
+    display: inline-block;
+    line-height: 50px;
+    text-indent: 3em;
+    box-sizing: border-box;
+}
+.main{
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex:1;
+    flex:1;
+}
+.main .content{
+    -webkit-flex:1;
+    flex:1;
+    background-color: #ecf0f5;
+}
+.main .content .lists,.main .content .details{
+    position: relative;
+    padding-bottom: 55px;
+    height: 100%;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+.main .content .details{
+    display: none;
+}
+.main .content .details .title-left{
+    color: #3385ff;
+    cursor: pointer;
+}
+.main .content .details ul li{
+    padding: 20px 0px 0px 20px;
+    font-size:14px;
+    line-height: 34px;
+}
+.main .content .details ul li p{
+    padding-top: 20px;
+    line-height: 34px;
+    font-size:14px;
+}
+.lists-head{
+    background-color: #deedfa;
+    color: #444;
+    display: block;
+    padding: 10px;
+}
+.main .content .list{
+    padding: 10px;
+    margin: 0!important;
+}
+.main .content .list li{
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 10px;
+    line-height: 30px;
+}
+.main .content .list li .bd{
+    padding: 5px 5px 5px 5px;
+    border:1px solid #ccc;
+}
+.main .content .list li .bd p{
+    height: 30px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.main .content .list li .name{
+    color:#3385ff;
+    cursor: pointer;
+}
+.main .content .list li .pr{
+    padding-right: 20px;
+}
+.huifaPages{
+    position: absolute;
+    bottom: 20px;
+    right:40px;
+}
+.huifaPrev{
+    float: right;
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #eee;
+}
+.huifaPrev:hover{
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color:#fff;
+}
+.huifaNext{
+    float: right;
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-left:10px;
+}
+.huifaNext:hover{
+    background-color: #4e98d7;
+    border-color: #4e98d7;
+    color:#fff;
+}
+.pag{
+    float: right;
+    padding: 5px 15px;
+}

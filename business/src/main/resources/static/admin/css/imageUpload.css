@@ -1,0 +1,78 @@
+div.mycss {
+    position: relative;
+    width: 96px;
+    height: auto;
+    float: left;
+    margin-bottom: 15px;
+}
+
+a.myacss {
+    z-index: 1;
+}
+
+img.myimagecss {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+div.mysmallcss {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+    float: right;
+}
+
+div.mysmallcss1 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+    float: right;
+}
+
+input.mydbucss {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: red;
+    border: 0px;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+}
+tr td ul{
+    list-style: none;
+}
+td input.text{
+    border:0px;
+    outline: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #000;
+    width: 50px;
+}
+td input.txt{
+    border:0px;
+    outline: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #000;
+    width: 80px;
+}
+
+div.mysmallcss1 input.mybucss {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #5bc0de;;
+    border: 0px;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+}

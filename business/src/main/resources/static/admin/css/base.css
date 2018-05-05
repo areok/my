@@ -1,0 +1,470 @@
+﻿.validerror{
+	display:inline;
+	color:#C81623
+}
+
+.editable-mult {
+	display: block;
+	margin: 3px 10px 0 10px;
+}
+
+.editable-mult span {
+	width: 110px;
+	display: inline-block;
+}
+.editable-mult input {
+	width: 182px;
+}
+.editableform{
+	width:370px;
+}
+
+.editableform .form-group{
+	margin-left:-15px;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+	background-color: #fefefe !important;
+	opacity: 0.9;
+	/*  border:0px; */
+}
+
+.detail-page .form-control[disabled],.detail-page .form-control[readonly],.detail-page fieldset[disabled] .form-control {
+	/*background-color: #ffffff !important;*/
+	/*border:0px;*/
+}
+.betweenTime{
+	text-align:center ;padding: 6px 0px !important;width:0px !important; margin-left:-7px;
+}
+/* .pretty-date lable:first{
+	
+} */
+.pretty-date{
+	/* background-color: #000; */
+}
+.pretty-date label:first-child{
+	/* margin-right:5px */
+	float: left;
+}
+.pretty-date label:last-child{
+	float: right;
+}
+.pretty-date label:first-child input{
+	margin-right:1%
+}
+.pretty-date label:last-child input{
+	float: right;
+}
+.pretty-date label input{
+	display: inline-block;
+	width: 96%!important;
+	height: 34px;
+	padding: 6px  3px 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc !important;
+}
+.pretty-date label{
+	width:50%;
+	height: 34px;
+	white-space:pre;
+}
+/* 字体上浮问题 */
+div.col-xs-10, div.col-xs-9{
+	word-break: break-all;
+	line-height:34px
+}
+
+
+table button.bg-green, table button.bg-yellow{
+	background-color: transparent !important;
+	color: rgb(60, 141, 188) !important;
+}
+
+
+/* .box-info .box-header{
+	background-color: rgba(0, 192, 239,0.4);
+	border-radius: 0 0 5px 5px;
+} */
+
+.box-warning, .box {
+	border-top-color: #4e98d7 !important;
+}
+
+.box-info .box-header, .box .box-header {
+	background-color: #deedfa;
+	border-radius: 0 0 5px 5px;
+}
+
+.box-warning .box-header {
+	border-radius: 0 0 5px 5px;
+}
+
+body .form-horizontal .form-group {
+	margin:-1px -1px 0px 0px;
+	padding-bottom:0px;
+	border:1px solid #eee;
+	line-height:30px;
+
+}
+body .form-horizontal .form-group:last-child{
+	margin-bottom:5px;
+}
+div.form-group {
+	/* margin-bottom: 15px; */
+}
+.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10{
+	padding:4px 15px;
+	height:100%;
+	margin:0px -1px 0px 0px;
+	border-left:1px solid #eee;
+}
+
+.row .col-xs-2,.row .col-xs-3,.row .col-xs-4,.row .col-xs-5,.row .col-xs-6,.row .col-xs-7,.row .col-xs-8,.row .col-xs-9,.row .col-xs-10{
+	border-left:0px;
+}
+img.ali-url{
+	width:80px;
+	height:80px;
+}
+
+input.form-control{
+	border-radius:5px;
+}
+input{
+	border-radius:5px;
+	border:1px solid #ddd;
+	max-height:34px;
+}
+textarea, textarea.form-control{
+	overflow-x:hidden;
+	overflow-y:hidden;
+	border-radius:5px;
+	border:1px solid #ddd;
+	resize: vertical;
+}
+
+#famliy{
+	display:none;
+}
+#paginator a{
+	cursor:pointer;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+	background: #5ca7e7 !important;
+	border-color: #5ca7e7 !important;
+}
+.paging.col-xs-1 {
+	padding-top: 4px;
+}
+.checklist .editable-container .popover-content{
+	max-height:500px;
+	overflow:auto;
+	width:400px;
+}
+
+.searchwapper{
+	padding: 4px 15px !important;
+}
+.searchwapper span{
+	border-top-right-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
+}
+.searchwapper span.disabled:hover{
+	cursor:not-allowed;
+}
+
+.validate-tooltip{
+	z-index:10
+}
+
+.validate-tooltip .tooltip-inner{
+	background-color:#c33131 !important;
+}
+.validate-tooltip .tooltip-arrow{
+	border-top-color: #c33131 !important;
+}
+.editable-buttons-bottom{
+	text-align:center;
+}
+.editable-form-bottom > *{
+	width:100%;
+	margin:0 auto !important;
+}
+
+.editable-form-bottom button{
+	margin: 0 20px;
+}
+
+.modal{
+	z-index:1100!important;
+}
+/* 解决验证提示的定位问题 */
+td{
+	position:relative;
+}
+.editable-empty{
+	border-radius: 3px;
+	background-color: #00acd6!important;
+	border: 1px solid transparent;
+	padding: 5px 10px;
+	font-size:12px;
+	color: #fff;
+}
+.editable-empty:hover{
+	background-color: #31b0d5!important;
+}
+.fixed-table-body{
+	overflow:visible;
+}
+.editable-unsaved{
+	/* background-color: #transport !important; */
+}
+.editableform .control-group{
+	margin-left:1px;
+}
+
+.paddingzero .col-xs-12{
+	padding:0px;
+}
+
+
+/*改变全流程色系*/
+.main-sidebar .slimScrollDiv {
+	background: #4e98d7;
+}
+
+.btn-success {
+	background: #5ca7e7 !important;
+	border: 1px solid #4e9de1 !important;
+}
+
+/*登陆*/
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.login {
+	width: 100%;
+	height: 100%;
+	background: url(/admin/img/welcome.png) no-repeat left top;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.login .align-items-center {
+	display: flex;
+	min-height: 100vh;
+	align-items: center !important;
+}
+
+.login .row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+}
+
+.login .m0 {
+	margin: 0;
+}
+
+.login .justify-content-FLEXEND {
+	-webkit-box-pack: center !important;
+	-ms-flex-pack: center !important;
+	justify-content: flex-end !important;
+}
+
+.login .card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border: 1px solid #cfd8dc;
+	margin-bottom: 0px;
+	border-radius: 4px !important;
+}
+
+.login .card > h1 {
+	margin: 0;
+	height: 60px;
+	line-height: 60px;
+	font-size: 18px;
+	text-align: center;
+	color: #333333;
+	background: #dfecfa;
+	font-family: "Microsoft YaHei";
+}
+
+.login .card-block {
+	padding: 2.25rem;
+}
+.login .input-group-addon {
+	background-color: #fff;
+	border-radius: 5px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.login .border-re {
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.login .input-group {
+	margin-bottom: 15px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.login .loginBTN {
+	height: 44px;
+	line-height: 19px;
+	font-size: 16px;
+	background: #65a5e7;
+	border: none;
+	border-radius: 4px;
+}
+table {
+	word-break:break-all!important;
+}
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+	vertical-align: middle!important;
+}
+table.table-bordered th:last-child, table.table-bordered td:last-child {
+	padding: 5px;
+}
+.borderTopNo {
+	border-top: none!important;
+}
+.p0 {
+	padding: 0!important;
+}
+
+.tab-pane.fade{
+	display: none !important;
+}
+.tab-pane.fade.active{
+	display: block !important;
+}
+
+
+
+
+#websocket-message ul *{
+	font:normal 14px "Microsoft YaHei";
+}
+
+
+#websocket-message ul .panel-default>.panel-heading{
+	background-color: #eaf1fb;
+	font:normal 14px "Microsoft YaHei";
+	color:#787878;
+	height:40px;
+	/*line-height: 40px;*/
+	padding:10px 14px;
+}
+
+#websocket-message ul a{
+	background-color: transparent!important;
+	font:normal 14px "Microsoft YaHei";
+	color:rgba(78,152,215,0.9) !important;
+}
+
+#websocket-message ul a:hover{
+	color:rgb(62,138,197) !important;
+}
+
+#websocket-message ul {
+	border:0px;
+}
+
+#websocket-message .dropdown-menu{
+	width: 390px;
+	padding:0px
+}
+
+#websocket-ul {
+	max-height:346px;
+	overflow :auto
+}
+#websocket-ul .websocket-ul-top{
+	display: block;
+	padding-bottom:5px;
+	/*word-break: break-all;*/
+	/*text-align: justify;*/
+	/*text-align-last: justify;*/
+}
+
+#websocket-message .panel-body{
+	padding:0px
+}
+
+
+#websocket-ul .news-item{
+	padding:14px;
+	list-style-type:none;
+	border-top: 1px solid #ebebeb;
+	text-align:justify;
+}
+
+#websocket-ul .news-item.search{
+	border-top: 0px solid #ebebeb;
+}
+
+
+#websocket-ul {
+	position: relative;
+}
+
+
+#websocket-ul .cute-off{
+	color:#ebebeb;
+	padding: 0px 8px;
+}
+
+
+#websocket-ul .websockhandle{
+	/*float:right;*/
+}
+
+
+#websocket-ul .websock-remove{
+	padding-left: 14px ;
+	margin-left: 10px;
+	line-height:14px;
+	cursor: pointer;
+	background: url("/admin/img/websock/remove.png") no-repeat center;
+}
+#websocket-ul .websock-remove:hover{
+
+	background: url("/admin/img/websock/remove-hover.png") no-repeat center;
+}
+
+#websocket-ul .detail-status{
+	/*font-weight: bold;*/
+
+}
+
+#websock-bussno-search{
+	padding-left:10px;
+	border: 1px solid #ebebeb ;
+	border-radius: 5px;
+	width: 100%;
+	height:30px;
+}
+#websocket-ul .search{
+	position: relative;
+}
+
+#websocket-ul .searchIcon {
+	padding: 10px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: url("/admin/img/websock/search.png") no-repeat center top;
+	cursor:pointer;
+}
