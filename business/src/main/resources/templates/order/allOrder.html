@@ -50,7 +50,6 @@
                             <tr>
                                 <th style="text-align:center">序号</th>
                                 <th style="text-align:center">订单价值</th>
-                                <th style="text-align:center">订单数量</th>
                                 <th style="text-align:center">订单用户</th>
                                 <th style="text-align:center">配送地址</th>
                                 <th style="text-align:center">订单状态</th>
@@ -60,7 +59,6 @@
                             <tr style="text-align:center" th:each="order : ${orders}">
                                 <td th:text="${order.id}">>业务编号</td>
                                 <td th:text="${order.total}">业务编号</td>
-                                <td th:text="${order.num}">业务编号</td>
                                 <td th:text="${order.userName}">业务编号</td>
                                 <td th:text="${order.address}">业务编号</td>
                                 <td th:text="${order.status}">业务编号</td>
