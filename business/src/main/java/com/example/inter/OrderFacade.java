@@ -1,6 +1,7 @@
 package com.example.inter;
 
 import com.example.entity.Order;
+import com.example.entity.OrderInfo;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface OrderFacade {
     Integer update(Order order);
 
     List<Order> query(Order order);
+
+    List<OrderInfo> queryAll();
 }

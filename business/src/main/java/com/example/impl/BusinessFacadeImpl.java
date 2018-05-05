@@ -42,4 +42,9 @@ public class BusinessFacadeImpl implements BusinessFacade {
         criteria.andBTodaycommendEqualTo("1");
         return businessMapper.selectByExample(businessExample);
     }
+
+    @Override
+    public List<Business> getAll() {
+        return businessMapper.selectAll();
+    }
 }

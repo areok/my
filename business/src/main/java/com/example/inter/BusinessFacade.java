@@ -17,4 +17,5 @@ public interface BusinessFacade {
     //获取今日推荐
     List<Business> getTodayCommendationList();
 
+    List<Business> getAll();
 }
